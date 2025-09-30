@@ -1,4 +1,5 @@
 "use client";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -221,12 +222,12 @@ const CounterArea = () => {
           }`}
         >
           <div className="inline-flex items-center space-x-6">
-            <a
+            <Link
               href="/contact"
               className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-2xl"
             >
               {t("Start Your Journey")}
-            </a>
+            </Link>
             <div className="hidden sm:block text-gray-400">
               <span className="text-sm">
                 {t("Join our growing network of satisfied customers")}
