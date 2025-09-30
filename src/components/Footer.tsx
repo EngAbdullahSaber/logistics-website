@@ -181,12 +181,12 @@ const Footer = () => {
                     >
                       {footerData.contact.phones.map((phone, index) => (
                         <div key={index}>
-                          <a
+                          <Link
                             href={`tel:${phone}`}
                             className="text-gray-300 hover:text-white transition-colors text-sm block"
                           >
                             {phone}
-                          </a>
+                          </Link>
                         </div>
                       ))}
                     </div>
@@ -207,12 +207,12 @@ const Footer = () => {
                     >
                       {footerData.contact.emails.map((email, index) => (
                         <div key={index}>
-                          <a
+                          <Link
                             href={`mailto:${email}`}
                             className="text-gray-300 hover:text-white transition-colors text-sm block"
                           >
                             {email}
-                          </a>
+                          </Link>
                         </div>
                       ))}
                     </div>
@@ -374,14 +374,14 @@ const Footer = () => {
                 >
                   {footerData.socialLinks.map(
                     ({ icon: Icon, href, name }, index) => (
-                      <a
+                      <Link
                         key={index}
                         href={href}
                         title={name}
                         className="w-12 h-12 bg-slate-800/50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-600/25"
                       >
                         <Icon className="w-5 h-5" />
-                      </a>
+                      </Link>
                     )
                   )}
                 </div>
