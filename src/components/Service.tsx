@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
 const Service = () => {
@@ -246,7 +247,7 @@ const Service = () => {
 
                   {/* CTA */}
                   <div className="mt-auto">
-                    <a
+                    <Link
                       href={service.link}
                       className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300 group/link"
                     >
@@ -264,7 +265,7 @@ const Service = () => {
                           d="M17 8l4 4m0 0l-4 4m4-4H3"
                         />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Hover Border Effect */}
@@ -291,19 +292,19 @@ const Service = () => {
               personalized consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
+              <Link
                 href="/contact"
                 className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-2xl"
               >
                 Get Custom Quote
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services"
                 className="border border-gray-300 hover:border-blue-300 text-gray-700 hover:text-blue-600 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
               >
                 View All Services
-              </a>
-            </div>
+              </Link>
+             </div>
           </div>
         </div>
       </div>
