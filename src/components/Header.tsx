@@ -1,5 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import React, { useState, useEffect, useMemo } from "react";
@@ -14,6 +15,7 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const { locale } = useParams() as { locale: string };
+
   const toggleSubmenu = (index: number) => {
     setActiveSubmenu(activeSubmenu === index ? null : index);
   };
@@ -36,6 +38,43 @@ const Header = () => {
     setIsMobileMenuOpen(false);
     setActiveSubmenu(null);
   };
+
+  // Function to handle service submenu click
+  const handleServiceClick = (serviceType: string) => {
+    const serviceSlug = serviceType.toLowerCase().replace(/\s+/g, "-");
+    const servicesPath = `/${locale}/services/${serviceSlug}`;
+    router.push(servicesPath);
+    closeMobileMenu();
+  };
+
+  // Service submenu items with their respective slugs
+  const serviceSubmenuItems = [
+    {
+      key: "customsConsultancy",
+      value: t("Customs Consultancy"),
+      slug: "customs-consultancy",
+    },
+    {
+      key: "egyptianCustoms",
+      value: t("Egyptian Customs Services"),
+      slug: "egyptian-customs",
+    },
+    {
+      key: "logisticsSupplyChain",
+      value: t("Logistics & Supply Chain"),
+      slug: "logistics",
+    },
+    {
+      key: "customsClearance",
+      value: t("Customs Clearance"),
+      slug: "customs-clearance",
+    },
+    {
+      key: "riskManagement",
+      value: t("Risk Management & Compliance"),
+      slug: "risk-management",
+    },
+  ];
 
   // Get current locale from path
   const currentLocale = useMemo(() => {
@@ -131,7 +170,7 @@ const Header = () => {
                 >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                +1 (555) 123-4567
+                +02 034951015{" "}
               </span>
               <span className="hidden md:flex items-center text-xs md:text-sm">
                 <svg
@@ -189,27 +228,22 @@ const Header = () => {
             <div className="flex justify-between items-center py-3 md:py-4">
               {/* Logo */}
               <div className="flex items-center space-x-2 md:space-x-3">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                    <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z" />
-                  </svg>
+                <div className="w-32 h-12 sm:w-32 sm:h-12 md:w-32 md:h-12 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/logo.JPEG"
+                    alt="Glob logistics"
+                    width={120}
+                    height={45}
+                  />
                 </div>
                 <div
                   className={
                     currentLocale === "ar" ? "text-right" : "text-left"
                   }
                 >
-                  <h1 className="text-base sm:text-lg md:text-2xl font-bold text-gray-900 leading-tight">
-                    {t("logiTrans")}
-                  </h1>
-                  <p className="text-xs md:text-sm text-gray-600 hidden sm:block">
-                    {t("globalLogistics")}
-                  </p>
+                  {/* <h1 className="text-base sm:text-lg md:text-2xl leading-4.5 text-center font-extrabold text-[#292f5d] ">
+                    GLOB<span className="font-bold block">logistics</span>
+                  </h1> */}
                 </div>
               </div>
 
@@ -226,14 +260,8 @@ const Header = () => {
                   { name: t("about"), href: "/about" },
                   {
                     name: t("services"),
-                    submenu: [
-                      t("oceanFreight"),
-                      t("airFreight"),
-                      t("groundTransport"),
-                      t("warehousing"),
-                      t("supplyChain"),
-                      t("customs"),
-                    ],
+                    href: "", // Main services page
+                    submenu: serviceSubmenuItems,
                   },
                   { name: t("contact"), href: "/contact" },
                 ].map((item, index) => (
@@ -269,13 +297,13 @@ const Header = () => {
                       >
                         <div className="py-2">
                           {item.submenu.map((subItem, subIndex) => (
-                            <Link
+                            <button
                               key={subIndex}
-                              href="#"
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                              onClick={() => handleServiceClick(subItem.slug)}
+                              className="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                             >
-                              {subItem}
-                            </Link>
+                              {subItem.value}
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -438,7 +466,7 @@ const Header = () => {
                   </div>
                   <div>
                     <h2 className="text-lg font-bold text-gray-900">
-                      {t("logiTrans")}
+                      {t("Glob logistics")}
                     </h2>
                   </div>
                 </div>
@@ -505,14 +533,8 @@ const Header = () => {
                   { name: t("about"), href: "/about" },
                   {
                     name: t("services"),
-                    submenu: [
-                      t("oceanFreight"),
-                      t("airFreight"),
-                      t("groundTransport"),
-                      t("warehousing"),
-                      t("supplyChain"),
-                      t("customs"),
-                    ],
+                    href: "/services", // Main services page
+                    submenu: serviceSubmenuItems,
                   },
                   { name: t("contact"), href: "/contact" },
                 ].map((item, index) => (
@@ -553,14 +575,13 @@ const Header = () => {
                     {item.submenu && activeSubmenu === index && (
                       <div className="pl-4 pb-3 space-y-1">
                         {item.submenu.map((subItem, subIndex) => (
-                          <Link
+                          <button
                             key={subIndex}
-                            href="#"
-                            className="block text-gray-600 py-2 px-3 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors text-sm"
-                            onClick={closeMobileMenu}
+                            onClick={() => handleServiceClick(subItem.slug)}
+                            className="block w-full text-left text-gray-600 py-2 px-3 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors text-sm"
                           >
-                            {subItem}
-                          </Link>
+                            {subItem.value}
+                          </button>
                         ))}
                       </div>
                     )}
@@ -590,7 +611,7 @@ const Header = () => {
                     >
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
-                    <span>+1 (555) 123-4567</span>
+                    <span>+02 033955582</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <svg

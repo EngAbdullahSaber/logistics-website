@@ -1,5 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import {
@@ -18,6 +19,7 @@ import {
   FaAward,
   FaCheckCircle,
   FaArrowRight,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -35,6 +37,23 @@ const Footer = () => {
   const currentLocale = getCurrentLocale();
   const isRTL = currentLocale === "ar";
 
+  // Function to open WhatsApp chat
+  const openWhatsApp = (phoneNumber: string) => {
+    // Remove any non-digit characters from phone number
+    const cleanPhone = phoneNumber.replace(/\D/g, "");
+    // Create WhatsApp URL with international format
+    const whatsappUrl = `https://wa.me/${cleanPhone}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  // Function to open Gmail compose
+  const openGmail = (email: string) => {
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      email
+    )}`;
+    window.open(gmailUrl, "_blank");
+  };
+
   const footerData = {
     company: {
       name: t("Global Customs & Logistics"),
@@ -42,7 +61,7 @@ const Footer = () => {
     },
     contact: {
       address: t("Cairo, Egypt – Serving global trade routes"),
-      phones: [t("01061920272"), t("01222418582"), t("033955582")],
+      phones: [t("01004176030")],
       emails: ["info@customs-logistics.com", "support@customs-logistics.com"],
       hours: t("Available 24/7 for international trade support"),
     },
@@ -136,10 +155,11 @@ const Footer = () => {
             {/* Company Information - Takes more space */}
             <div className="lg:col-span-4">
               <div className="mb-8">
-                <img
-                  src="img/logo/logo.png"
+                <Image
+                  src={"/logo1.png"}
                   alt="Logista Logo"
-                  className="h-12 w-auto mb-8 brightness-0 invert"
+                  width={70}
+                  height={40}
                 />
                 <p
                   className={`text-gray-400 text-base leading-relaxed mb-8 ${
@@ -172,7 +192,7 @@ const Footer = () => {
                     }`}
                   >
                     <div className="w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-600/30 transition-colors">
-                      <FaPhone className="w-4 h-4 text-green-400" />
+                      <FaWhatsapp className="w-4 h-4 text-green-400" />
                     </div>
                     <div
                       className={`space-y-1 ${
@@ -181,12 +201,13 @@ const Footer = () => {
                     >
                       {footerData.contact.phones.map((phone, index) => (
                         <div key={index}>
-                          <Link
-                            href={`tel:${phone}`}
-                            className="text-gray-300 hover:text-white transition-colors text-sm block"
+                          <button
+                            onClick={() => openWhatsApp(phone)}
+                            className="text-gray-300 hover:text-white transition-colors text-sm block text-left w-full hover:underline"
                           >
-                            {phone}
-                          </Link>
+                            {phone}{" "}
+                            <span className="text-green-400 text-xs"></span>
+                          </button>
                         </div>
                       ))}
                     </div>
@@ -207,12 +228,15 @@ const Footer = () => {
                     >
                       {footerData.contact.emails.map((email, index) => (
                         <div key={index}>
-                          <Link
-                            href={`mailto:${email}`}
-                            className="text-gray-300 hover:text-white transition-colors text-sm block"
+                          <button
+                            onClick={() => openGmail(email)}
+                            className="text-gray-300 hover:text-white transition-colors text-sm block text-left w-full hover:underline"
                           >
-                            {email}
-                          </Link>
+                            {email}{" "}
+                            <span className="text-purple-400 text-xs">
+                              (Gmail)
+                            </span>
+                          </button>
                         </div>
                       ))}
                     </div>
