@@ -163,19 +163,6 @@ const WhyChoose = () => {
                 </div>
               </div>
             </div>
-
-            {/* CTA */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-2xl border border-cyan-400/30 text-center">
-              <h4 className="text-white font-bold text-lg mb-2">
-                {t("ctaTitle")}
-              </h4>
-              <p className="text-slate-300 text-sm mb-4">
-                {t("ctaDescription")}
-              </p>
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold">
-                {t("ctaButton")}
-              </button>
-            </div>
           </div>
         </div>
       </div>

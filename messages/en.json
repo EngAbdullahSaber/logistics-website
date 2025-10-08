@@ -155,6 +155,7 @@
     "statsCountries": "Countries",
     "statsOnTime": "On-Time",
     "statsSupport": "Support",
+    "Years Expertise": "Years Expertise",
 
     "tabConsultantTitle": "Customs Consulting",
     "tabConsultantSubtitle": "Global Compliance",
@@ -202,7 +203,7 @@
 
     "Logistics Excellence": "Logistics Excellence",
     "Global Supply Chains": "Global Supply Chains",
-    "Logistics connects suppliers, manufacturers, and consumers by managing transport, warehousing, inventory, and information flows efficiently": "Logistics connects suppliers, manufacturers, and consumers by managing transport, warehousing, inventory, and information flows efficiently.",
+    "LogisticsParagraph": "Logistics connects suppliers, manufacturers, and consumers by managing transport, warehousing, inventory, and information flows efficiently.",
     "Transportation & warehousing": "Transportation & warehousing",
     "Inventory & order management": "Inventory & order management",
     "AI & digital tracking systems": "AI & digital tracking systems",
@@ -315,13 +316,13 @@
     "Available 24/7": "Available 24/7",
     "Frequently Asked": "Frequently Asked",
     "Questions": "Questions",
-    "Quick answers to common questions about our logistics services.": "Quick answers to common questions about our logistics services.",
+    "Quick answers to common questions about our logistics services": "Quick answers to common questions about our logistics services.",
     "Why do I need a customs consultant?": "Why do I need a customs consultant?",
     "Customs consultants help you navigate international trade laws, tariffs, and regulations to avoid costly mistakes and delays": "Customs consultants help you navigate international trade laws, tariffs, and regulations to avoid costly mistakes and delays.",
     "Can you help reduce customs duties?": "Can you help reduce customs duties?",
-    "Yes. Through Free Trade Agreements, correct HS classification, and duty drawback programs, we identify legal ways to lower your costs": "Yes. Through Free Trade Agreements, correct HS classification, and duty drawback programs, we identify legal ways to lower your costs.",
+    "FaqParagraph2": "Yes. Through Free Trade Agreements, correct HS classification, and duty drawback programs, we identify legal ways to lower your costs.",
     "Do you assist with import procedures in Egypt?": "Do you assist with import procedures in Egypt?",
-    "Absolutely. We provide guidance on import procedures, fair assessment of duties, and documentation for Egyptian customs authorities": "Absolutely. We provide guidance on import procedures, fair assessment of duties, and documentation for Egyptian customs authorities.",
+    "FaqParagraph3": "Absolutely. We provide guidance on import procedures, fair assessment of duties, and documentation for Egyptian customs authorities.",
     "What industries do you serve?": "What industries do you serve?",
     "We support importers, exporters, customs brokers, logistics companies, and businesses in global supply chains": "We support importers, exporters, customs brokers, logistics companies, and businesses in global supply chains.",
     "Duty & Tax Optimization": "Duty & Tax Optimization",
@@ -459,5 +460,65 @@
     "Release of Goods": "Release of Goods",
     "Deploy systems, processes, and digital tools for efficiency": "Deploy systems, processes, and digital tools for efficiency",
     "Clear shipments and arrange import/export delivery": "Clear shipments and arrange import/export delivery."
+  },
+  "Service": {
+    "Our Services": "Our Services",
+    "Comprehensive Logistics": "Comprehensive Logistics",
+    "Solutions": "Solutions",
+    "Description": "From ground transportation to global supply chain management, we deliver excellence.",
+    "Explore Service": "Explore Service",
+    "Risk Reduction": "Risk Reduction",
+    "Shipments": "Shipments",
+    "Clients Served": "Clients Served",
+
+    "Customs Consultancy": "Customs Consultancy",
+    "Customs Consultancy Description": "Expert guidance through complex trade regulations, ensuring smooth cross-border operations with optimized duty strategies and full compliance.",
+    "Tariff Classification": "Tariff Classification",
+    "Customs Valuation": "Customs Valuation",
+    "Documentation Review": "Documentation Review",
+    "Risk Assessment": "Risk Assessment",
+    "Customs Consultancy Stats Label": "Clients Served",
+
+    "Egyptian Customs Services": "Egyptian Customs Services",
+    "Egyptian Customs Services Description": "Specialized local expertise in Egyptian customs, providing technical advice, fair duty assessment, and compliance with regulations.",
+    "Fair Duty Assessment": "Fair Duty Assessment",
+    "Import Procedures": "Import Procedures",
+    "Risk Analysis": "Risk Analysis",
+    "Time Optimization": "Time Optimization",
+    "Egyptian Customs Services Stats Label": "Clearances",
+
+    "Logistics & Supply Chain": "Logistics & Supply Chain",
+    "Logistics & Supply Chain Description": "End-to-end logistics solutions managing the flow of goods, services, and information from origin to destination with maximum efficiency.",
+
+    "Multi-Modal Transport": "Multi-Modal Transport",
+    "Warehousing": "Warehousing",
+    "Inventory Management": "Inventory Management",
+    "Real-Time Tracking": "Real-Time Tracking",
+    "Logistics & Supply Chain Stats Label": "Shipments",
+
+    "Customs Clearance": "Customs Clearance",
+    "Customs Clearance Description": "Fast and efficient customs clearance with complete documentation, ensuring compliance and smooth release of goods worldwide.",
+
+    "Document Submission": "Document Submission",
+    "Duty Processing": "Duty Processing",
+    "Inspections": "Inspections",
+    "Digital E-Filing": "Digital E-Filing",
+
+    "Customs Clearance Stats Label": "Success Rate",
+
+    "Risk Management": "Risk Management",
+    "From ground transportation to global supply chain management, we deliver excellence": "From ground transportation to global supply chain management, we deliver excellence",
+    "Clearances": "Clearances",
+    "Success Rate": "Success Rate",
+
+    "Risk Management Description": "Comprehensive compliance solutions protecting your business from customs risks, penalties, and operational disruptions.",
+
+    "Compliance Audits": "Compliance Audits",
+    "Risk Mitigation": "Risk Mitigation",
+
+    "Expert guidance on trade laws, tariffs, and duty optimization": "Expert guidance on trade laws, tariffs, and duty optimization",
+    "Regulatory Updates": "Regulatory Updates",
+    "Internal Controls": "Internal Controls",
+    "Risk Management Stats Label": "Risk Reduction"
   }
 }

@@ -81,53 +81,6 @@ const ContactUs = () => {
     }, 2000);
   };
 
-  const contactOptions = [
-    {
-      icon: FaFileAlt,
-      title: t("Customs Compliance"),
-      description: t(
-        "Ensure your import and export operations meet legal requirements to avoid delays, fines, or seizures."
-      ),
-      action: t("Learn More"),
-      color: "from-blue-500 to-blue-600",
-      bgColor: "from-blue-50 to-blue-100",
-      href: "/compliance",
-    },
-    {
-      icon: FaCalculator,
-      title: t("Duty Optimization"),
-      description: t(
-        "Reduce costs legally with Free Trade Agreements, special procedures, and duty drawback programs."
-      ),
-      action: t("Optimize Now"),
-      color: "from-green-500 to-green-600",
-      bgColor: "from-green-50 to-green-100",
-      href: "/duty-optimization",
-    },
-    {
-      icon: FaShippingFast,
-      title: t("Documentation Support"),
-      description: t(
-        "Get expert help preparing customs declarations, invoices, and certificates of origin."
-      ),
-      action: t("Get Support"),
-      color: "from-purple-500 to-purple-600",
-      bgColor: "from-purple-50 to-purple-100",
-      href: "/documentation",
-    },
-    {
-      icon: FaUsers,
-      title: t("Risk Management"),
-      description: t(
-        "Audit your trade processes, identify risks, and implement strategies to stay compliant and secure."
-      ),
-      action: t("Start Audit"),
-      color: "from-orange-500 to-orange-600",
-      bgColor: "from-orange-50 to-orange-100",
-      href: "/risk-management",
-    },
-  ];
-
   const offices = [
     {
       city: "Mumbai",
@@ -192,33 +145,6 @@ const ContactUs = () => {
               )}
               .
             </p>
-
-            {/* Quick Contact Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {contactOptions.map((option, index) => (
-                <div
-                  key={index}
-                  className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-blue-200"
-                >
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-r ${option.color} rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 transition-all duration-300 shadow-lg`}
-                  >
-                    <option.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {option.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {option.description}
-                  </p>
-                  <button
-                    className={`w-full bg-gradient-to-r ${option.color} text-white py-3 px-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
-                  >
-                    {option.action}
-                  </button>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -356,28 +282,6 @@ const ContactUs = () => {
                           className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
                           placeholder="Your Company Ltd."
                         />
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t("Service Interest")} *
-                      </label>
-                      <div className="relative">
-                        <FaShippingFast className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                        <select
-                          name="service"
-                          value={formData.service}
-                          onChange={handleInputChange}
-                          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white appearance-none"
-                        >
-                          <option value="">Select a service...</option>
-                          {serviceOptions.map((service, index) => (
-                            <option key={index} value={service}>
-                              {service}
-                            </option>
-                          ))}
-                        </select>
                       </div>
                     </div>
 
@@ -569,11 +473,16 @@ const ContactUs = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href="tel:+18001234567"
+                        href="tel:+02 034951015"
                         className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                        dir="ltr"
+                        style={{
+                          unicodeBidi: "bidi-override",
+                          fontFamily: "monospace",
+                        }}
                       >
                         <FaPhone className="w-4 h-4" />
-                        +1 (800) 123-4567
+                        +02 034951015
                       </a>
                       <span className="text-sm text-gray-600 flex items-center justify-center">
                         {t("Available 24/7")}
@@ -599,7 +508,7 @@ const ContactUs = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t(
-                "Quick answers to common questions about our logistics services."
+                "Quick answers to common questions about our logistics services"
               )}
             </p>
           </div>
@@ -613,13 +522,11 @@ const ContactUs = () => {
               },
               {
                 question: "Can you help reduce customs duties?",
-                answer:
-                  "Yes. Through Free Trade Agreements, correct HS classification, and duty drawback programs, we identify legal ways to lower your costs",
+                answer: "FaqParagraph2",
               },
               {
                 question: "Do you assist with import procedures in Egypt?",
-                answer:
-                  "Absolutely. We provide guidance on import procedures, fair assessment of duties, and documentation for Egyptian customs authorities",
+                answer: "FaqParagraph3",
               },
               {
                 question: "What industries do you serve?",

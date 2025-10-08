@@ -45,9 +45,7 @@ const StepArea = () => {
       number: "03",
       title: t("Logistics Excellence"),
       subtitle: t("Global Supply Chains"),
-      description: t(
-        "Logistics connects suppliers, manufacturers, and consumers by managing transport, warehousing, inventory, and information flows efficiently."
-      ),
+      description: t("LogisticsParagraph"),
       icon: "🚚",
       color: "from-purple-500 to-indigo-500",
       bgColor: "from-purple-50 to-indigo-50",
@@ -140,13 +138,13 @@ const StepArea = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="text-sm font-semibold text-cyan-300 uppercase tracking-wider mb-2">
+                  <div className="text-sm font-semibold text-cyan-950 uppercase tracking-wider mb-2">
                     {step.subtitle}
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
+                  <h3 className="text-xl lg:text-2xl font-bold  text-slate-900 mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-slate-300 leading-relaxed mb-6 text-sm lg:text-base">
+                  <p className="text-slate-950 leading-relaxed mb-6 text-sm lg:text-base">
                     {step.description}
                   </p>
 
@@ -172,7 +170,7 @@ const StepArea = () => {
                             />
                           </svg>
                         </div>
-                        <span className="text-sm text-slate-300 font-medium">
+                        <span className="text-sm text-emerald-950 font-medium">
                           {feature}
                         </span>
                       </div>

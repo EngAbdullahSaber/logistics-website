@@ -170,7 +170,15 @@ const Header = () => {
                 >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                +02 034951015{" "}
+                <span
+                  dir="ltr"
+                  style={{
+                    unicodeBidi: "bidi-override",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  +02 034951015
+                </span>{" "}
               </span>
               <span className="hidden md:flex items-center text-xs md:text-sm">
                 <svg
@@ -339,7 +347,7 @@ const Header = () => {
                   </svg>
                 </button>
                 <Link
-                  href="#"
+                  href={`${locale}/contact`}
                   className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-sm md:text-base"
                 >
                   {t("getQuote")}

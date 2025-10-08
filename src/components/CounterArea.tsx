@@ -180,7 +180,7 @@ const CounterArea = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/10 group-hover:border-white/20 transition-all duration-300" />
 
                 {/* Content */}
-                <div className="relative p-8 text-center">
+                <div className="relative flex flex-col justify-between p-8 text-center h-[350px]">
                   {/* Icon */}
                   <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                     {counter.icon}
@@ -213,27 +213,6 @@ const CounterArea = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA Section */}
-        <div
-          className={`text-center mt-16 transition-all duration-1000 delay-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <div className="inline-flex items-center space-x-6">
-            <Link
-              href="/contact"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-2xl"
-            >
-              {t("Start Your Journey")}
-            </Link>
-            <div className="hidden sm:block text-gray-400">
-              <span className="text-sm">
-                {t("Join our growing network of satisfied customers")}
-              </span>
-            </div>
-          </div>
         </div>
       </div>
 
