@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   title: "Mahfouz - Safe & Reliable School Transportation",
   description:
     "Mahfouz connects families with trusted school transport. Join organized groups, follow every ride on a live map, and get instant notifications at pickup, drop-off, and delays—peace of mind from home to school and back",
+  icons: {
+    icon: "/favicon.ico",
+  },
   keywords: [
     "school transportation",
     "student transport",
