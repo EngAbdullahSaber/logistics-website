@@ -38,7 +38,7 @@ const Service = () => {
       stats: { value: "300+", label: t("Clients Served") },
       link: `${locale}/services/customs-consultancy`,
       gradient: "from-blue-600 to-blue-800",
-      image: "/services/download (1).jfif",
+      image: "/services/download (2).JPG",
     },
     {
       id: 2,
@@ -56,7 +56,7 @@ const Service = () => {
       stats: { value: "500+", label: t("Clearances") },
       link: `${locale}/services/egyptian-customs`,
       gradient: "from-orange-500 to-red-600",
-      image: "/services/download (2).jfif",
+      image: "/services/download (1).JPG",
     },
     {
       id: 3,
@@ -74,7 +74,7 @@ const Service = () => {
       stats: { value: "1M+", label: t("Shipments") },
       link: `${locale}/services/logistics`,
       gradient: "from-teal-600 to-blue-700",
-      image: "/services/download.jfif",
+      image: "/services/download (3).JPG",
     },
     {
       id: 4,
@@ -92,25 +92,7 @@ const Service = () => {
       stats: { value: "99.8%", label: t("Success Rate") },
       link: `${locale}/services/customs-clearance`,
       gradient: "from-purple-600 to-indigo-700",
-      image: "/services/download (4).jfif",
-    },
-    {
-      id: 5,
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      key: "riskManagement",
-      title: t("Risk Management"),
-      slug: "risk-management",
-      description: t("Risk Management Description"),
-      features: [
-        t("Compliance Audits"),
-        t("Risk Mitigation"),
-        t("Regulatory Updates"),
-        t("Internal Controls"),
-      ],
-      stats: { value: "95%", label: t("Risk Reduction") },
-      link: `${locale}/services/risk-management`,
-      gradient: "from-green-600 to-emerald-700",
-      image: "/services/download (3).jfif",
+      image: "/services/Customs.JPG",
     },
   ];
 
@@ -360,7 +342,7 @@ const Service = () => {
         </div>
 
         {/* Service Cards Preview */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
           {services.map((service, index) => (
             <button
               key={service.id}

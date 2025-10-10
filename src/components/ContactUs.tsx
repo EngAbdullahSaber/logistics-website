@@ -83,13 +83,14 @@ const ContactUs = () => {
 
   const offices = [
     {
-      city: "Mumbai",
-      country: "India",
-      address: "BKC, Bandra East, Mumbai 400051, Maharashtra, India",
-      phone: "+91 22 6789 0123",
-      email: "mumbai@logista.com",
-      hours: "Mon-Sat: 10AM-7PM IST",
-      isHeadquarters: false,
+      city: "Alexandria",
+      country: "Egypt",
+      address:
+        "El Shorta buildings No. 3, 10th floor, Kom eldikkah, Alexandria, Egypt",
+      phone: "+02 034951015",
+      email: "info@logista.com",
+      hours: "Sun-Thu: 9AM-5PM EET",
+      isHeadquarters: true,
     },
   ];
 
@@ -134,14 +135,14 @@ const ContactUs = () => {
               {t("Professional Support")}
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              {t("Get In Touch")}
+              {t("Get In ")}
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
                 {t("Touch")}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
               {t(
-                "Ready to transform your logistics? Our global team of experts is here to provide tailored solutions for your business needs, 24/7"
+                "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs"
               )}
               .
             </p>
@@ -162,7 +163,7 @@ const ContactUs = () => {
                   </h2>
                   <p className="text-gray-600 text-lg">
                     {t(
-                      "Fill out the form below and our team will get back to you within 24 hours"
+                      "Fill out the form below and our Alexandria team will get back to you within 24 hours"
                     )}
                   </p>
                 </div>
@@ -177,7 +178,7 @@ const ContactUs = () => {
                     </h3>
                     <p className="text-gray-600 mb-8">
                       {t(
-                        "Thank you for contacting us. Our team will respond within 24 hours"
+                        "Thank you for contacting us. Our Alexandria team will respond within 24 hours"
                       )}
                     </p>
                     <button
@@ -262,7 +263,7 @@ const ContactUs = () => {
                             value={formData.phone}
                             onChange={handleInputChange}
                             className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
-                            placeholder="+1 (555) 123-4567"
+                            placeholder="+20 100 000 0000"
                           />
                         </div>
                       </div>
@@ -287,6 +288,28 @@ const ContactUs = () => {
 
                     <div className="relative">
                       <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        {t("Service Needed")}
+                      </label>
+                      <div className="relative">
+                        <FaHandsHelping className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 z-10" />
+                        <select
+                          name="service"
+                          value={formData.service}
+                          onChange={handleInputChange}
+                          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white appearance-none"
+                        >
+                          <option value="">{t("Select a service")}</option>
+                          {serviceOptions.map((service, index) => (
+                            <option key={index} value={service}>
+                              {service}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="relative">
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
                         {t("Message")} *
                       </label>
                       <div className="relative">
@@ -298,7 +321,7 @@ const ContactUs = () => {
                           required
                           rows={6}
                           className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white resize-none"
-                          placeholder="Tell us about your logistics needs, shipping requirements, or any questions you have..."
+                          placeholder="Tell us about your customs clearance needs, shipping requirements, or any questions you have about Egyptian import/export procedures..."
                         />
                       </div>
                     </div>
@@ -338,51 +361,28 @@ const ContactUs = () => {
 
             {/* Contact Information & Offices */}
             <div className="space-y-8">
-              {/* Global Offices */}
+              {/* Egypt Office */}
               <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-gray-100">
                 <div className="mb-8">
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    {t("Our Global Offices")}
+                    {t("Our Alexandria Office")}
                   </h2>
                   <p className="text-gray-600">
                     {t(
-                      "With offices worldwide, we're always close to your business"
+                      "Located in the heart of Alexandria, we serve clients throughout Egypt and the Middle East"
                     )}
                   </p>
                 </div>
 
-                {/* Office Tabs */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {offices.map((office, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setActiveOffice(index)}
-                      className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
-                        activeOffice === index
-                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                          : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                      }`}
-                    >
-                      {office.isHeadquarters && (
-                        <FaBuilding className="w-4 h-4" />
-                      )}
-                      {office.city}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Active Office Details */}
+                {/* Office Details */}
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6">
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                        {offices[activeOffice].city},{" "}
-                        {offices[activeOffice].country}
-                        {offices[activeOffice].isHeadquarters && (
-                          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                            HQ
-                          </span>
-                        )}
+                        Alexandria, Egypt
+                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          Headquarters
+                        </span>
                       </h3>
                     </div>
                     <FaGlobe className="w-6 h-6 text-blue-600" />
@@ -398,7 +398,9 @@ const ContactUs = () => {
                           {t("Address")}
                         </p>
                         <p className="text-gray-600">
-                          {offices[activeOffice].address}
+                          El Shorta buildings No. 3, 10th floor
+                          <br />
+                          Kom eldikkah, Alexandria, Egypt
                         </p>
                       </div>
                     </div>
@@ -413,10 +415,11 @@ const ContactUs = () => {
                             {t("Phone")}
                           </p>
                           <a
-                            href={`tel:${offices[activeOffice].phone}`}
+                            href="tel:+02034951015"
                             className="text-gray-600 hover:text-blue-600 transition-colors"
+                            dir="ltr"
                           >
-                            {offices[activeOffice].phone}
+                            +02 034951015
                           </a>
                         </div>
                       </div>
@@ -430,10 +433,10 @@ const ContactUs = () => {
                             {t("Email")}
                           </p>
                           <a
-                            href={`mailto:${offices[activeOffice].email}`}
+                            href="mailto:info@logista.com"
                             className="text-gray-600 hover:text-blue-600 transition-colors"
                           >
-                            {offices[activeOffice].email}
+                            info@logista.com
                           </a>
                         </div>
                       </div>
@@ -447,8 +450,40 @@ const ContactUs = () => {
                         <p className="font-semibold text-gray-900 mb-1">
                           {t("Business Hours")}
                         </p>
-                        <p className="text-gray-600">
-                          {offices[activeOffice].hours}
+                        <p className="text-gray-600">Sun-Thu: 9AM-5PM EET</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Additional Services */}
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <FaShippingFast className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">
+                          {t("Customs Clearance")}
+                        </p>
+                        <p className="text-gray-600 text-xs">
+                          {t("Egyptian ports")}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <FaFileAlt className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">
+                          {t("Documentation")}
+                        </p>
+                        <p className="text-gray-600 text-xs">
+                          {t("Import/Export")}
                         </p>
                       </div>
                     </div>
@@ -468,18 +503,14 @@ const ContactUs = () => {
                     </h3>
                     <p className="text-gray-600 mb-4">
                       {t(
-                        "For urgent shipping matters or critical issues, contact our emergency hotline"
+                        "For urgent customs clearance matters or critical shipping issues at Egyptian ports"
                       )}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href="tel:+02 034951015"
+                        href="tel:+02034951015"
                         className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                         dir="ltr"
-                        style={{
-                          unicodeBidi: "bidi-override",
-                          fontFamily: "monospace",
-                        }}
                       >
                         <FaPhone className="w-4 h-4" />
                         +02 034951015
@@ -508,7 +539,7 @@ const ContactUs = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t(
-                "Quick answers to common questions about our logistics services"
+                "Quick answers to common questions about Egyptian customs and logistics services"
               )}
             </p>
           </div>
@@ -516,22 +547,25 @@ const ContactUs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
               {
-                question: "Why do I need a customs consultant?",
+                question: "Why do I need a customs consultant in Egypt?",
                 answer:
-                  "Customs consultants help you navigate international trade laws, tariffs, and regulations to avoid costly mistakes and delays",
+                  "Faq1",
               },
               {
-                question: "Can you help reduce customs duties?",
-                answer: "FaqParagraph2",
-              },
-              {
-                question: "Do you assist with import procedures in Egypt?",
-                answer: "FaqParagraph3",
-              },
-              {
-                question: "What industries do you serve?",
+                question: "Can you help reduce customs duties in Egypt?",
                 answer:
-                  "We support importers, exporters, customs brokers, logistics companies, and businesses in global supply chains",
+                  "Faq2",
+              },
+              {
+                question:
+                  "Do you assist with import procedures in Alexandria ports?",
+                answer:
+                  "Faq3",
+              },
+              {
+                question: "What Egyptian ports do you cover?",
+                answer:
+                  "Faq4",
               },
             ].map((faq, index) => (
               <div

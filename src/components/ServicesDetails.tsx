@@ -32,7 +32,7 @@ const ServicesDetails = () => {
       title: t("Customs Consultancy"),
       slug: "customs-consultancy",
       description: t(
-        "A Customs Consultant is a professional expert who provides advice and guidance to businesses and individuals engaged in international trade. They ensure goods move across borders smoothly, efficiently, and legally while helping navigate complex and constantly changing trade laws, tariffs, and duties"
+        "service1complex and constantly changing trade laws, tariffs, and duties"
       ),
       features: [
         t("Customs Compliance & Risk Management"),
@@ -80,7 +80,7 @@ const ServicesDetails = () => {
           ),
         },
       ],
-      image: "/services/download.jfif",
+      image: "/services/download (2).JPG",
     },
 
     "egyptian-customs": {
@@ -133,7 +133,7 @@ const ServicesDetails = () => {
           ),
         },
       ],
-      image: "/services/download (1).jfif",
+      image: "/services/download (1).JPG",
     },
 
     logistics: {
@@ -187,7 +187,7 @@ const ServicesDetails = () => {
           ),
         },
       ],
-      image: "/services/download (3).jfif",
+      image: "/services/download (3).JPG",
     },
 
     "customs-clearance": {
@@ -237,7 +237,7 @@ const ServicesDetails = () => {
           description: t("Clear shipments and arrange import/export delivery"),
         },
       ],
-      image: "/services/download (2).jfif",
+      image: "/services/Customs.JPG",
     },
   };
 
@@ -307,16 +307,41 @@ const ServicesDetails = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Service Image */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="relative h-64 bg-gray-200">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
+              <div className="relative h-80 bg-gray-200">
+                <div className="relative h-80 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100 rounded-2xl overflow-hidden group">
+                  {/* Animated background pattern */}
+                  <div className="absolute inset-0 opacity-30">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-blue-400/20 animate-gradient bg-size-200" />
+                    <div className="absolute top-0 left-0 w-full h-full">
+                      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
+                      <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
+                    </div>
+                  </div>
+
+                  {/* Image */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover object-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={false}
+                    quality={90}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Shimmer effect while loading */}
+                  <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               </div>
             </div>
 

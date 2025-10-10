@@ -8,3 +8,34 @@ html{
   scroll-behavior: smooth;
 }
  
+   @keyframes shimmer {
+                    100% {
+                      transform: translateX(100%);
+                    }
+                  }
+
+                  @keyframes gradient {
+                    0%,
+                    100% {
+                      background-position: 0% 50%;
+                    }
+                    50% {
+                      background-position: 100% 50%;
+                    }
+                  }
+
+                  .animate-shimmer {
+                    animation: shimmer 2s infinite;
+                  }
+
+                  .animate-gradient {
+                    animation: gradient 3s ease infinite;
+                  }
+
+                  .bg-size-200 {
+                    background-size: 200% 200%;
+                  }
+
+                  .delay-1000 {
+                    animation-delay: 1s;
+                  }
