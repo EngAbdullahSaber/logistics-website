@@ -3,15 +3,11 @@ import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import {
   FaMapMarkerAlt,
-  FaPhone,
+  FaWhatsapp,
   FaEnvelope,
   FaClock,
   FaGlobe,
-  FaShippingFast,
   FaHeadset,
-  FaCalculator,
-  FaFileAlt,
-  FaUsers,
   FaPaperPlane,
   FaCheckCircle,
   FaExclamationTriangle,
@@ -20,10 +16,7 @@ import {
   FaPhoneAlt,
   FaEnvelopeOpen,
   FaComments,
-  FaArrowRight,
   FaQuestionCircle,
-  FaHandsHelping,
-  FaTruck,
 } from "react-icons/fa";
 
 const ContactUs = () => {
@@ -34,7 +27,6 @@ const ContactUs = () => {
     email: "",
     phone: "",
     company: "",
-    service: "",
     message: "",
   });
 
@@ -43,8 +35,6 @@ const ContactUs = () => {
     isSubmitted: false,
     hasError: false,
   });
-
-  const [activeOffice, setActiveOffice] = useState(0);
 
   const handleInputChange = (
     e: React.FormEvent<
@@ -55,6 +45,32 @@ const ContactUs = () => {
       ...formData,
       [e.currentTarget.name]: e.currentTarget.value,
     });
+  };
+
+  // Fixed WhatsApp function
+  const openWhatsApp = (phoneNumber: string) => {
+    // Clean the phone number - remove spaces, dashes, and other non-digit characters
+    const cleanPhone = phoneNumber.replace(/\D/g, "");
+
+    // Ensure the number has country code format
+    let formattedNumber = cleanPhone;
+
+    // If number starts with 02 (Egypt landline format), convert to international format
+    if (formattedNumber.startsWith("02")) {
+      formattedNumber = "20" + formattedNumber.substring(2);
+    }
+
+    // If number doesn't start with country code, assume it's Egypt (+20)
+    if (!formattedNumber.startsWith("20") && !formattedNumber.startsWith("+")) {
+      formattedNumber = "20" + formattedNumber;
+    }
+
+    // Remove any leading zeros after country code
+    formattedNumber = formattedNumber.replace(/^200+/, "20");
+
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${formattedNumber}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
@@ -75,7 +91,6 @@ const ContactUs = () => {
         email: "",
         phone: "",
         company: "",
-        service: "",
         message: "",
       });
     }, 2000);
@@ -87,23 +102,11 @@ const ContactUs = () => {
       country: "Egypt",
       address:
         "El Shorta buildings No. 3, 10th floor, Kom eldikkah, Alexandria, Egypt",
-      phone: "+02 034951015",
+      phone: "+201004176030", // Fixed format for WhatsApp
+      displayPhone: "+20 100 417 6030", // Display format
       email: "info@logista.com",
       hours: "Sun-Thu: 9AM-5PM EET",
-      isHeadquarters: true,
     },
-  ];
-
-  const serviceOptions = [
-    t("Customs Compliance"),
-    t("Duty & Tax Optimization"),
-    t("Tariff Classification (HS Codes)"),
-    t("Documentation & Declarations"),
-    t("Fair Assessment of Customs Duties"),
-    t("Import/Export Procedures"),
-    t("Valuation Advisory"),
-    t("Risk Management & Audits"),
-    t("Other"),
   ];
 
   return (
@@ -199,7 +202,7 @@ const ContactUs = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          First Name *
+                          {t("First Name")} *
                         </label>
                         <div className="relative">
                           <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -216,7 +219,7 @@ const ContactUs = () => {
                       </div>
                       <div className="relative">
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Last Name *
+                          {t("Last Name")} *
                         </label>
                         <div className="relative">
                           <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -283,28 +286,6 @@ const ContactUs = () => {
                           className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
                           placeholder="Your Company Ltd."
                         />
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t("Service Needed")}
-                      </label>
-                      <div className="relative">
-                        <FaHandsHelping className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 z-10" />
-                        <select
-                          name="service"
-                          value={formData.service}
-                          onChange={handleInputChange}
-                          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white appearance-none"
-                        >
-                          <option value="">{t("Select a service")}</option>
-                          {serviceOptions.map((service, index) => (
-                            <option key={index} value={service}>
-                              {service}
-                            </option>
-                          ))}
-                        </select>
                       </div>
                     </div>
 
@@ -379,10 +360,7 @@ const ContactUs = () => {
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-                        Alexandria, Egypt
-                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                          Headquarters
-                        </span>
+                        {t("Alexandria, Egypt")}
                       </h3>
                     </div>
                     <FaGlobe className="w-6 h-6 text-blue-600" />
@@ -398,9 +376,9 @@ const ContactUs = () => {
                           {t("Address")}
                         </p>
                         <p className="text-gray-600">
-                          El Shorta buildings No. 3, 10th floor
+                          {t("AddressDetails")}
                           <br />
-                          Kom eldikkah, Alexandria, Egypt
+                          {t("Kom eldikkah, Alexandria, Egypt")}
                         </p>
                       </div>
                     </div>
@@ -408,19 +386,18 @@ const ContactUs = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="flex items-start gap-4">
                         <div className="w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <FaPhone className="w-4 h-4 text-green-600" />
+                          <FaWhatsapp className="w-4 h-4 text-green-600" />
                         </div>
                         <div>
                           <p className="font-semibold text-gray-900 mb-1">
                             {t("Phone")}
                           </p>
-                          <a
-                            href="tel:+02034951015"
-                            className="text-gray-600 hover:text-blue-600 transition-colors"
-                            dir="ltr"
+                          <button
+                            onClick={() => openWhatsApp(offices[0].phone)}
+                            className="text-gray-700 cursor-pointer hover:text-green-600 transition-colors text-sm block text-left w-full hover:underline flex items-center gap-1"
                           >
-                            +02 034951015
-                          </a>
+                            {offices[0].displayPhone}
+                          </button>
                         </div>
                       </div>
 
@@ -450,41 +427,7 @@ const ContactUs = () => {
                         <p className="font-semibold text-gray-900 mb-1">
                           {t("Business Hours")}
                         </p>
-                        <p className="text-gray-600">Sun-Thu: 9AM-5PM EET</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Additional Services */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <FaShippingFast className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">
-                          {t("Customs Clearance")}
-                        </p>
-                        <p className="text-gray-600 text-xs">
-                          {t("Egyptian ports")}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <FaFileAlt className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">
-                          {t("Documentation")}
-                        </p>
-                        <p className="text-gray-600 text-xs">
-                          {t("Import/Export")}
-                        </p>
+                        <p className="text-gray-600">{t("Sun-Thu: 9AM-5PM")}</p>
                       </div>
                     </div>
                   </div>
@@ -507,14 +450,13 @@ const ContactUs = () => {
                       )}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <a
-                        href="tel:+02034951015"
-                        className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
-                        dir="ltr"
+                      <button
+                        onClick={() => openWhatsApp(offices[0].phone)}
+                        className="bg-green-600 cursor-pointer hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                       >
-                        <FaPhone className="w-4 h-4" />
-                        +02 034951015
-                      </a>
+                        <FaWhatsapp className="w-4 h-4" />
+                        {t("WhatsApp")}
+                      </button>
                       <span className="text-sm text-gray-600 flex items-center justify-center">
                         {t("Available 24/7")}
                       </span>
@@ -548,24 +490,20 @@ const ContactUs = () => {
             {[
               {
                 question: "Why do I need a customs consultant in Egypt?",
-                answer:
-                  "Faq1",
+                answer: "Faq1",
               },
               {
                 question: "Can you help reduce customs duties in Egypt?",
-                answer:
-                  "Faq2",
+                answer: "Faq2",
               },
               {
                 question:
                   "Do you assist with import procedures in Alexandria ports?",
-                answer:
-                  "Faq3",
+                answer: "Faq3",
               },
               {
                 question: "What Egyptian ports do you cover?",
-                answer:
-                  "Faq4",
+                answer: "Faq4",
               },
             ].map((faq, index) => (
               <div

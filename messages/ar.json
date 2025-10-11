@@ -76,56 +76,40 @@
     "Years Experience": "سنوات الخبرة",
     "Industry Leader": "رائد الصناعة",
     "Customs Compliance": "الامتثال الجمركي",
-    "Ensure all import/export operations meet local and international customs regulations to avoid delays, fines or seizure.": "ضمان التزام جميع عمليات الاستيراد والتصدير باللوائح الجمركية المحلية والدولية لتجنب التأخير أو الغرامات أو المصادرة.",
-
+    "paragraph12": "ضمان التزام جميع عمليات الاستيراد والتصدير باللوائح الجمركية المحلية والدولية لتجنب التأخير أو الغرامات أو المصادرة.",
+    "Certified Logistics": "الخدمات اللوجستية المعتمدة",
     "Documentation & Filing": "المستندات والتقديم",
-    "Prepare and review invoices, customs declarations, certificates of origin and other required paperwork.": "إعداد ومراجعة الفواتير والإقرارات الجمركية وشهادات المنشأ وغيرها من المستندات المطلوبة.",
 
     "Tariff Classification": "تصنيف التعرفة الجمركية",
-    "Accurately identify HS codes to ensure correct duties and taxes are applied (critical for correct costing).": "تحديد رموز النظام المنسق بدقة لضمان تطبيق الرسوم والضرائب بشكل صحيح (مهم لحساب التكلفة بشكل دقيق).",
 
     "Duty Optimization": "تحسين الرسوم الجمركية",
-    "Identify legal opportunities to reduce duty costs (FTAs, special procedures, drawback programs).": "تحديد الفرص القانونية لخفض تكاليف الرسوم (اتفاقيات التجارة الحرة، الإجراءات الخاصة، برامج الاسترداد).",
 
     "Valuation & Audits": "التقييم والتدقيق",
-    "Advise on correct customs valuation and audit trade processes to uncover risks and savings.": "تقديم المشورة بشأن التقييم الجمركي الصحيح وتدقيق العمليات التجارية لاكتشاف المخاطر وفرص التوفير.",
 
     "Liaison with Authorities": "التواصل مع السلطات",
-    "Act as intermediary with customs authorities to resolve disputes, expedite clearance and troubleshoot issues.": "العمل كوسيط مع السلطات الجمركية لحل النزاعات وتسريع التخليص وحل المشكلات.",
 
     "Fair Assessment of Duties": "التقييم العادل للرسوم",
-    "Assist importers and brokers with correct duty assessments for imported or exported goods.": "مساعدة المستوردين والوكلاء في التقييم الصحيح للرسوم على البضائع المستوردة أو المصدرة.",
 
     "Import Procedures": "إجراءات الاستيراد",
-    "Provide technical advice and prepare the documents required by Egyptian customs for efficient clearance.": "تقديم المشورة الفنية وإعداد المستندات المطلوبة من قبل الجمارك المصرية للتخليص بكفاءة.",
 
     "Regulation Guidance": "إرشاد القوانين واللوائح",
-    "Help clients interpret customs laws, instructions and official publications to remain compliant.": "مساعدة العملاء على فهم القوانين الجمركية والتعليمات والمنشورات الرسمية للبقاء ملتزمين.",
 
     "Risk Analysis & Reduction": "تحليل وتقليل المخاطر",
-    "Analyze import risks and implement practical controls to avoid penalties and delays.": "تحليل مخاطر الاستيراد وتطبيق ضوابط عملية لتجنب العقوبات والتأخير.",
 
     "Time & Effort Savings": "توفير الوقت والجهد",
-    "Streamline clearance procedures so importers save time and reduce administrative burden.": "تبسيط إجراءات التخليص ليوفر المستوردون الوقت ويقللوا العبء الإداري.",
 
     "Logistics — Scope & Modern Trends": "اللوجستيات — النطاق والاتجاهات الحديثة",
     "Transportation": "النقل",
-    "Manage movement of goods via road, rail, sea and air with optimized routing and carrier choice.": "إدارة حركة البضائع عبر الطرق والسكك الحديدية والبحر والجو مع تحسين المسارات واختيار الناقل المناسب.",
 
     "Warehousing": "التخزين",
-    "Offer storage strategies balancing supply and demand while protecting goods and controlling costs.": "تقديم استراتيجيات تخزين تحقق التوازن بين العرض والطلب مع حماية البضائع والتحكم في التكاليف.",
 
     "Inventory & Order Fulfillment": "إدارة المخزون وتنفيذ الطلبات",
-    "Efficient inventory control and reliable order processing to reduce stockouts and speed deliveries.": "التحكم الفعال في المخزون ومعالجة الطلبات بشكل موثوق لتقليل النقص وتسريع عمليات التسليم.",
 
     "Digitalization & Tracking": "الرقمنة والتتبع",
-    "Use IoT, GPS and cloud platforms for real-time tracking, visibility and supply-chain transparency.": "استخدام إنترنت الأشياء وGPS والمنصات السحابية للتتبع في الوقت الفعلي والشفافية في سلسلة التوريد.",
 
     "Automation & AI": "الأتمتة والذكاء الاصطناعي",
-    "Apply automation and analytics to improve forecasting, routing optimization and warehouse throughput.": "تطبيق الأتمتة والتحليلات لتحسين التنبؤات وتحسين المسارات وزيادة كفاءة المستودعات.",
 
-    "Green Logistics": "اللوجستيات الخضراء",
-    "Incorporate eco-friendly practices — sustainable packaging, route optimization and lower emissions.": "تضمين ممارسات صديقة للبيئة — تغليف مستدام، تحسين المسارات وخفض الانبعاثات."
+    "Green Logistics": "اللوجستيات الخضراء"
   },
   "CounterArea": {
     "Our Achievements": "إنجازاتنا",
@@ -216,7 +200,7 @@
   "Footer": {
     "Global Customs & Logistics": "الجمارك العالمية والخدمات اللوجستية",
     "FooterParagraph": "نربط الحدود بالخبرة — من الاستشارات الجمركية إلى الابتكار اللوجستي. نضمن تجارة سلسة وفعّالة ومتوافقة حول العالم.",
-    "Cairo, Egypt – Serving global trade routes": "القاهرة، مصر – نخدم طرق التجارة العالمية",
+    "Cairo, Egypt – Serving global trade routes": "الاسكندرية, مصر – نخدم طرق التجارة العالمية",
     "01061920272": "٠١٠٦١٩٢٠٢٧٢",
     "01004176030": "٠١٠٠٤١٧٦٠٣٠",
     "01222418582": "٠١٢٢٢٤١٨٥٨٢",
@@ -265,7 +249,7 @@
     "YouTube": "يوتيوب",
 
     "Support": "الدعم",
-    "Logista": "لوچيستا",
+    "Logista": "جلوب لوجيستكس",
     "All": "جميع ",
     "rights reserved": "الحقوق محفوظة.",
     "Designed with ❤️ for global logistics excellence": "صُمم بحب من أجل التميز في الخدمات اللوجستية العالمية"
@@ -277,10 +261,15 @@
     "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs": "هل أنت مستعد لتحويل خدماتك اللوجستية؟ فريقنا المتخصص في الإسكندرية جاهز لتقديم حلول مخصصة للجمارك والشحن لتلبية احتياجات عملك.",
     "Fill out the form below and our Alexandria team will get back to you within 24 hours": "املأ النموذج أدناه وسيتواصل معك فريقنا في الإسكندرية خلال 24 ساعة.",
     "Thank you for contacting us. Our Alexandria team will respond within 24 hours": "شكرًا لتواصلك معنا، سيقوم فريق الإسكندرية بالرد خلال 24 ساعة.",
-
+    "Alexandria, Egypt": "الإسكندرية، مصر",
     "Service Needed": "الخدمة المطلوبة",
     "Select a service": "اختر خدمة",
-
+    "WhatsApp": "واتساب",
+    "Sun-Thu: 9AM-5PM": "الأحد - الخميس: 9 صباحًا - 5 مساءً",
+    "Kom eldikkah, Alexandria, Egypt": "كوم الدكة، الإسكندرية، مصر",
+    "AddressDetails": "مباني الشرطة رقم 3، الطابق العاشر",
+    "First Name": "الاسم الأول",
+    "Last Name": "اسم العائلة",
     "Our Alexandria Office": "مكتبنا في الإسكندرية",
     "Located in the heart of Alexandria, we serve clients throughout Egypt and the Middle East": "يقع في قلب مدينة الإسكندرية، ونخدم عملاءنا في جميع أنحاء مصر والشرق الأوسط.",
 
@@ -311,12 +300,10 @@
     "Get expert help preparing customs declarations, invoices, and certificates of origin.": "احصل على مساعدة الخبراء في إعداد التصريحات الجمركية والفواتير وشهادات المنشأ.",
     "Get Support": "احصل على الدعم",
     "Risk Management": "إدارة المخاطر",
-    "Audit your trade processes, identify risks, and implement strategies to stay compliant and secure.": "قم بتدقيق عملياتك التجارية، وحدد المخاطر، وطبق استراتيجيات للحفاظ على الامتثال والأمان.",
     "Start Audit": "ابدأ التدقيق",
     "Send Us A Message": "أرسل لنا رسالة",
     "Fill out the form below and our team will get back to you within 24 hours": "املأ النموذج أدناه وسيتواصل معك فريقنا خلال 24 ساعة",
     "Message Sent Successfully!": "تم إرسال الرسالة بنجاح!",
-    "Thank you for contacting us. Our team will respond within 24 hours": "شكرًا لتواصلك معنا. سيرد فريقنا خلال 24 ساعة",
     "Send Another Message": "أرسل رسالة أخرى",
     "Email Address": "البريد الإلكتروني",
     "Phone Number": "رقم الهاتف",

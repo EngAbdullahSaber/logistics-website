@@ -76,58 +76,43 @@
     "We combine customs expertise with logistics know-how — from documentation and tariff classification to duty optimization and risk mitigation — so you can reduce costs, avoid delays and scale your international operations safely": "We combine customs expertise with logistics know-how — from documentation and tariff classification to duty optimization and risk mitigation — so you can reduce costs, avoid delays and scale your international operations safely.",
 
     "Customs Compliance": "Customs Compliance",
-    "Ensure all import/export operations meet local and international customs regulations to avoid delays, fines or seizure.": "Ensure all import/export operations meet local and international customs regulations to avoid delays, fines or seizure.",
+    "paragraph12": "Ensure all import/export operations meet local and international customs regulations to avoid delays, fines or seizure.",
 
     "Documentation & Filing": "Documentation & Filing",
-    "Prepare and review invoices, customs declarations, certificates of origin and other required paperwork.": "Prepare and review invoices, customs declarations, certificates of origin and other required paperwork.",
 
     "Tariff Classification": "Tariff Classification",
-    "Accurately identify HS codes to ensure correct duties and taxes are applied (critical for correct costing).": "Accurately identify HS codes to ensure correct duties and taxes are applied (critical for correct costing).",
 
     "Duty Optimization": "Duty Optimization",
-    "Identify legal opportunities to reduce duty costs (FTAs, special procedures, drawback programs).": "Identify legal opportunities to reduce duty costs (FTAs, special procedures, drawback programs).",
 
     "Valuation & Audits": "Valuation & Audits",
-    "Advise on correct customs valuation and audit trade processes to uncover risks and savings.": "Advise on correct customs valuation and audit trade processes to uncover risks and savings.",
 
     "Liaison with Authorities": "Liaison with Authorities",
-    "Act as intermediary with customs authorities to resolve disputes, expedite clearance and troubleshoot issues.": "Act as intermediary with customs authorities to resolve disputes, expedite clearance and troubleshoot issues.",
 
     "Fair Assessment of Duties": "Fair Assessment of Duties",
-    "Assist importers and brokers with correct duty assessments for imported or exported goods.": "Assist importers and brokers with correct duty assessments for imported or exported goods.",
 
     "Import Procedures": "Import Procedures",
-    "Provide technical advice and prepare the documents required by Egyptian customs for efficient clearance.": "Provide technical advice and prepare the documents required by Egyptian customs for efficient clearance.",
 
     "Regulation Guidance": "Regulation Guidance",
-    "Help clients interpret customs laws, instructions and official publications to remain compliant.": "Help clients interpret customs laws, instructions and official publications to remain compliant.",
 
     "Risk Analysis & Reduction": "Risk Analysis & Reduction",
-    "Analyze import risks and implement practical controls to avoid penalties and delays.": "Analyze import risks and implement practical controls to avoid penalties and delays.",
 
     "Time & Effort Savings": "Time & Effort Savings",
-    "Streamline clearance procedures so importers save time and reduce administrative burden.": "Streamline clearance procedures so importers save time and reduce administrative burden.",
 
     "Logistics — Scope & Modern Trends": "Logistics — Scope & Modern Trends",
     "Transportation": "Transportation",
-    "Manage movement of goods via road, rail, sea and air with optimized routing and carrier choice.": "Manage movement of goods via road, rail, sea and air with optimized routing and carrier choice.",
 
+    "Certified Logistics": "Certified Logistics",
     "Warehousing": "Warehousing",
-    "Offer storage strategies balancing supply and demand while protecting goods and controlling costs.": "Offer storage strategies balancing supply and demand while protecting goods and controlling costs.",
 
     "Inventory & Order Fulfillment": "Inventory & Order Fulfillment",
-    "Efficient inventory control and reliable order processing to reduce stockouts and speed deliveries.": "Efficient inventory control and reliable order processing to reduce stockouts and speed deliveries.",
 
     "Digitalization & Tracking": "Digitalization & Tracking",
-    "Use IoT, GPS and cloud platforms for real-time tracking, visibility and supply-chain transparency.": "Use IoT, GPS and cloud platforms for real-time tracking, visibility and supply-chain transparency.",
 
     "Automation & AI": "Automation & AI",
-    "Apply automation and analytics to improve forecasting, routing optimization and warehouse throughput.": "Apply automation and analytics to improve forecasting, routing optimization and warehouse throughput.",
 
     "Green Logistics": "Green Logistics",
     "Years Experience": "Years Experience",
-    "Industry Leader": "Industry Leader",
-    "Incorporate eco-friendly practices — sustainable packaging, route optimization and lower emissions.": "Incorporate eco-friendly practices — sustainable packaging, route optimization and lower emissions."
+    "Industry Leader": "Industry Leader"
   },
   "CounterArea": {
     "Our Achievements": "Our Achievements",
@@ -148,7 +133,7 @@
 
   "WhyChoose": {
     "sectionBadge": "Logistics Excellence Since 2009",
-    "sectionTitle": "Why Choose Logista",
+    "sectionTitle": "Why Choose Globe Logistics",
     "sectionDescription": "Experience the future of logistics with our innovative solutions, cutting-edge technology, and unwavering commitment to moving your business forward across the globe.",
 
     "statsDeliveries": "Deliveries",
@@ -220,7 +205,7 @@
   "Footer": {
     "Global Customs & Logistics": "Global Customs & Logistics",
     "FooterParagraph": "Connecting borders with expertise — from customs consultancy to logistics innovation. We ensure smooth, efficient, and compliant trade worldwide.",
-    "Cairo, Egypt – Serving global trade routes": "Cairo, Egypt – Serving global trade routes",
+    "Cairo, Egypt – Serving global trade routes": "Alexandria, Egypt – Serving global trade routes",
     "01061920272": "01061920272",
     "01004176030": "01004176030",
     "01222418582": "01222418582",
@@ -270,7 +255,7 @@
     "YouTube": "YouTube",
 
     "Support": "Support",
-    "Logista": "Logista",
+    "Logista": "Globe Logistics",
     "All": "All ",
     "rights reserved": "rights reserved.",
     "Designed with ❤️ for global logistics excellence": "Designed with ❤️ for global logistics excellence"
@@ -279,6 +264,15 @@
     "Professional Support": "Professional Support",
     "Get In Touch": "Get In",
     "Get In ": "Get In ",
+    "WhatsApp": "WhatsApp",
+    "Alexandria, Egypt": "Alexandria, Egypt",
+    "Sun-Thu: 9AM-5PM": "Sun-Thu: 9AM-5PM",
+    "Kom eldikkah, Alexandria, Egypt": "Kom eldikkah, Alexandria, Egypt",
+    "AddressDetails": "El Shorta buildings No. 3, 10th floor",
+    "First Name": "First Name",
+    "Last Name": "Last Name",
+
+    "Faq4": "We serve all major Egyptian ports, including Alexandria, Damietta, Port Said, Sokhna, and Ain Sokhna. Our team has extensive experience dealing with customs authorities at these locations.",
     "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs": "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs",
     "Fill out the form below and our Alexandria team will get back to you within 24 hours": "Fill out the form below and our Alexandria team will get back to you within 24 hours",
     "Thank you for contacting us. Our Alexandria team will respond within 24 hours": "Thank you for contacting us. Our Alexandria team will respond within 24 hours",
@@ -313,12 +307,10 @@
     "Get expert help preparing customs declarations, invoices, and certificates of origin.": "Get expert help preparing customs declarations, invoices, and certificates of origin.",
     "Get Support": "Get Support",
     "Risk Management": "Risk Management",
-    "Audit your trade processes, identify risks, and implement strategies to stay compliant and secure.": "Audit your trade processes, identify risks, and implement strategies to stay compliant and secure.",
     "Start Audit": "Start Audit",
     "Send Us A Message": "Send Us A Message",
     "Fill out the form below and our team will get back to you within 24 hours": "Fill out the form below and our team will get back to you within 24 hours",
     "Message Sent Successfully!": "Message Sent Successfully!",
-    "Thank you for contacting us. Our team will respond within 24 hours": "Thank you for contacting us. Our team will respond within 24 hours",
     "Send Another Message": "Send Another Message",
     "Email Address": "Email Address",
     "Phone Number": "Phone Number",
