@@ -9,6 +9,7 @@ import {
   FaShieldAlt,
   FaGlobe,
   FaArrowRight,
+  FaShip,
 } from "react-icons/fa";
 import { useParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -93,6 +94,26 @@ const Service = () => {
       link: `${locale}/services/customs-clearance`,
       gradient: "from-purple-600 to-indigo-700",
       image: "/services/Customs.JPG",
+    }, // In your Service component, add this to the services array:
+    {
+      id: 5,
+      icon: <FaShip className="w-8 h-8" />, // You'll need to import FaShip from react-icons/fa
+      key: "shippingServices",
+      title: t("Shipping Services"),
+      slug: "shipping",
+      description: t(
+        "Comprehensive shipping solutions including sea, air, road, and rail freight for efficient global trade and supply chain management"
+      ),
+      features: [
+        t("Sea Freight"),
+        t("Air Freight"),
+        t("Road Transport"),
+        t("Rail Solutions"),
+      ],
+      stats: { value: "50K+", label: t("Shipments") },
+      link: `${locale}/services/shipping`,
+      gradient: "from-cyan-600 to-blue-700",
+      image: "/services/shipping.jpg",
     },
   ];
 
@@ -342,7 +363,7 @@ const Service = () => {
         </div>
 
         {/* Service Cards Preview */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-12">
           {services.map((service, index) => (
             <button
               key={service.id}

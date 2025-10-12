@@ -180,9 +180,7 @@ const ContactUs = () => {
                       {t("Message Sent Successfully!")}
                     </h3>
                     <p className="text-gray-600 mb-8">
-                      {t(
-                        "Thank you for contacting us. Our Alexandria team will respond within 24 hours"
-                      )}
+                      {t("Thank you for contacting us")}
                     </p>
                     <button
                       onClick={() =>

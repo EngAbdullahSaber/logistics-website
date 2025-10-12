@@ -69,6 +69,11 @@ const Header = () => {
       value: t("Customs Clearance"),
       slug: "customs-clearance",
     },
+    {
+      key: "shippingServices",
+      value: t("Shipping Services"),
+      slug: "shipping",
+    },
   ];
 
   // Get current locale from path

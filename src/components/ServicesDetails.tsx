@@ -88,7 +88,7 @@ const ServicesDetails = () => {
       title: t("Egyptian Customs Services"),
       slug: "egyptian-customs",
       description: t(
-        "Specialized customs consulting services in Egypt, providing technical advice and representation to importers and brokers for fair duty assessment, risk reduction, and compliance with local laws and regulations."
+        "Specialized customs consulting services in Egypt, providing technical advice and representation to importers and brokers for fair duty assessment, risk reduction, and compliance with local laws and regulations"
       ),
       features: [
         t("Fair Assessment of Customs Duties"),
@@ -140,9 +140,7 @@ const ServicesDetails = () => {
       key: "logisticsSupplyChain",
       title: t("Logistics & Supply Chain"),
       slug: "logistics",
-      description: t(
-        "Logistics is the backbone of global trade — managing the flow of goods, services, and information from origin to consumption. It includes transportation, warehousing, inventory, and order fulfillment to ensure efficiency, cost savings, and customer satisfaction."
-      ),
+      description: t("LogisticsParagraph"),
       features: [
         t("Transportation by Road, Rail, Sea & Air"),
         t("Warehousing & Storage Solutions"),
@@ -194,9 +192,7 @@ const ServicesDetails = () => {
       key: "customsClearance",
       title: t("Customs Clearance"),
       slug: "customs-clearance",
-      description: t(
-        "Customs clearance is the process of preparing and submitting the required documents to allow imports and exports. It ensures compliance with regulations, payment of duties and taxes, and smooth release of goods"
-      ),
+      description: t("CustomsParagraph"),
       features: [
         t("Documentation Submission (Invoices, Packing List, Bills of Lading)"),
         t("Customs Examination & Inspections"),
@@ -229,7 +225,7 @@ const ServicesDetails = () => {
         {
           step: 3,
           title: t("Duty & Tax Payment"),
-          description: t("Calculate and pay all duties, VAT, and taxes."),
+          description: t("Calculate and pay all duties, VAT, and taxes"),
         },
         {
           step: 4,
@@ -238,6 +234,58 @@ const ServicesDetails = () => {
         },
       ],
       image: "/services/Customs.JPG",
+    }, // In your ServicesDetails component, add this to the servicesData object:
+    shipping: {
+      key: "shippingServices",
+      title: t("Shipping Services"),
+      slug: "shipping",
+      description: t("ShippingParagraph"),
+      features: [
+        t("Sea Freight – Cost-effective for large volumes"),
+        t("Air Freight – Fastest for time-sensitive cargo"),
+        t("Road Freight – Ideal for domestic/regional delivery"),
+        t("Rail Freight – Efficient for heavy bulk shipments"),
+        t("Multi-modal transportation solutions"),
+        t("Real-time shipment tracking"),
+      ],
+      benefits: [
+        t("Supports international trade and economic growth"),
+        t("Ensures global availability of goods and materials"),
+        t("Facilitates efficient global supply chain operations"),
+        t("Connects businesses to international markets"),
+        t("Cost-effective transportation solutions"),
+      ],
+      process: [
+        {
+          step: 1,
+          title: t("Consultation & Planning"),
+          description: t(
+            "Assess shipment requirements and determine optimal shipping method"
+          ),
+        },
+        {
+          step: 2,
+          title: t("Documentation & Compliance"),
+          description: t(
+            "Prepare all necessary shipping documents and ensure regulatory compliance"
+          ),
+        },
+        {
+          step: 3,
+          title: t("Transportation & Tracking"),
+          description: t(
+            "Coordinate transportation and provide real-time shipment tracking"
+          ),
+        },
+        {
+          step: 4,
+          title: t("Delivery & Support"),
+          description: t(
+            "Ensure timely delivery and provide post-delivery support"
+          ),
+        },
+      ],
+      image: "/services/shipping.jpg", // You'll need to add this image
     },
   };
 
@@ -264,7 +312,7 @@ const ServicesDetails = () => {
             {t("Service Not Found")}
           </h1>
           <p className="text-gray-600 mb-6">
-            {t("The service you're looking for doesn't exist.")}
+            {t("The service you're looking for doesn't exist")}
           </p>
           <button
             onClick={() => router.push("/services")}
