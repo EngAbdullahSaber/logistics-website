@@ -346,8 +346,14 @@ const ServiceSlider = () => {
 
     return (
       slideDataMap[serviceSlug]?.[slideIndex] ||
-      slideDataMap[serviceSlug]?.[0] ||
-      {}
+      slideDataMap[serviceSlug]?.[0] || {
+        category: serviceTitle,
+        title: "",
+        description: "",
+        features: [],
+        stats: { number: "", label: "" },
+        cta: "",
+      }
     );
   };
 
