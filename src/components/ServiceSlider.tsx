@@ -105,7 +105,7 @@ const ServiceSlider = () => {
     serviceSlug: any,
     slideIndex: number,
     serviceTitle: string
-  ): SlideData | {} => {
+  ): SlideData => {
     const slideDataMap: Record<any, any[]> = {
       "customs-consultancy": [
         {
@@ -345,15 +345,7 @@ const ServiceSlider = () => {
     };
 
     return (
-      slideDataMap[serviceSlug]?.[slideIndex] ||
-      slideDataMap[serviceSlug]?.[0] || {
-        category: serviceTitle,
-        title: "",
-        description: "",
-        features: [],
-        stats: { number: "", label: "" },
-        cta: "",
-      }
+      slideDataMap[serviceSlug]?.[slideIndex] || slideDataMap[serviceSlug]?.[0]
     );
   };
 
