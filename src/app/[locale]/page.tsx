@@ -1,5 +1,6 @@
 import AboutArea from "@/components/AboutArea";
 import CounterArea from "@/components/CounterArea";
+import { getSlides } from "@/components/useSlides";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Service from "@/components/Service";
@@ -87,7 +88,6 @@ const structuredData = {
     "https://twitter.com/globlogistics",
   ],
 };
-
 export default function Home() {
   return (
     <div>

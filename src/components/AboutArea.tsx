@@ -70,10 +70,7 @@ const AboutArea = () => {
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url('/about-bg.png')" }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-fixed" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-50/95 via-white/90 to-blue-50/95" />
 
         {/* Decorative elements */}
@@ -98,7 +95,7 @@ const AboutArea = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-orange-500/20 rounded-2xl blur-lg" />
                 <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
                   <img
-                    src="/about_img_02.png"
+                    src="/about_img_02.webp"
                     alt="Customs & logistics"
                     className="w-full rounded-xl"
                   />

@@ -1,7 +1,8 @@
+// app/services/page.js
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ServicesDetails from "@/components/ServicesDetails";
-import Slider from "@/components/Slider";
+import ServiceSlider from "@/components/ServiceSlider";
 import React from "react";
 
 // SEO Metadata for Services Page
@@ -152,63 +153,7 @@ const servicesStructuredData = {
   },
 };
 
-// Service-specific structured data
-const serviceDetailsStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Our Professional Services",
-  description:
-    "Comprehensive logistics and customs consulting services offered by Glob Logistics",
-  numberOfItems: 4,
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      item: {
-        "@type": "Service",
-        name: "Customs Consultancy",
-        description:
-          "Expert guidance on international trade compliance, tariff classification, and duty optimization",
-        url: "https://globlogistics.com/services/customs-consultancy",
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      item: {
-        "@type": "Service",
-        name: "Egyptian Customs Services",
-        description:
-          "Specialized support for Egyptian import/export regulations and customs procedures",
-        url: "https://globlogistics.com/services/egyptian-customs",
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      item: {
-        "@type": "Service",
-        name: "Logistics & Supply Chain",
-        description:
-          "Comprehensive logistics solutions including transportation and supply chain management",
-        url: "https://globlogistics.com/services/logistics",
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      item: {
-        "@type": "Service",
-        name: "Customs Clearance",
-        description:
-          "Efficient customs clearance services for smooth import and export operations",
-        url: "https://globlogistics.com/services/customs-clearance",
-      },
-    },
-  ],
-};
-
-const page = () => {
+const ServicePage = () => {
   return (
     <div>
       {/* Structured Data for SEO */}
@@ -218,19 +163,13 @@ const page = () => {
           __html: JSON.stringify(servicesStructuredData),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceDetailsStructuredData),
-        }}
-      />
 
       <Header />
-      <Slider />
+      <ServiceSlider />
       <ServicesDetails />
       <Footer />
     </div>
   );
 };
 
-export default page;
+export default ServicePage;

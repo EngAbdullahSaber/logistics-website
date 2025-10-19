@@ -1,3 +1,4 @@
+import { getSlides } from "@/components/useSlides";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Slider from "@/components/Slider";
@@ -142,7 +143,8 @@ const serviceStructuredData = {
   },
 };
 
-const page = () => {
+const page =   () => {
+ 
   return (
     <div>
       {/* Structured Data for SEO */}
@@ -158,7 +160,7 @@ const page = () => {
       />
 
       <Header />
-      <Slider />
+      <Slider   />
       <WhyChoose />
       <StepArea />
       <Footer />
