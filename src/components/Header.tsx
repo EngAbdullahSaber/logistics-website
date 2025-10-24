@@ -238,10 +238,12 @@ const Header = () => {
               <div className="flex items-center space-x-2 md:space-x-3">
                 <div className="w-32 h-12 sm:w-32 sm:h-12 md:w-32 md:h-12 rounded-lg flex items-center justify-center">
                   <Image
-                    src="/logo.JPEG"
+                    src="/logo.jpeg"
                     alt="Glob logistics"
                     width={120}
                     height={45}
+                    priority // Add this prop
+                    className="w-auto h-full object-contain rounded-lg"
                   />
                 </div>
                 <div

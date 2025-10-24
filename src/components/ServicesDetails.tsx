@@ -80,7 +80,7 @@ const ServicesDetails = () => {
           ),
         },
       ],
-      image: "/services/download (2).JPG",
+      image: "/services/download (2).jpg",
     },
 
     "egyptian-customs": {
@@ -133,7 +133,7 @@ const ServicesDetails = () => {
           ),
         },
       ],
-      image: "/services/download (1).JPG",
+      image: "/slider/egyptian-customs-1.jpg",
     },
 
     logistics: {
@@ -185,7 +185,7 @@ const ServicesDetails = () => {
           ),
         },
       ],
-      image: "/services/download (3).JPG",
+      image: "/services/download (3).jpg",
     },
 
     "customs-clearance": {
@@ -374,7 +374,7 @@ const ServicesDetails = () => {
                     className="object-cover object-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority={false}
-                    quality={90}
+                    quality={75} // Use the default quality
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                     }}

@@ -39,7 +39,7 @@ const Service = () => {
       stats: { value: "300+", label: t("Clients Served") },
       link: `${locale}/services/customs-consultancy`,
       gradient: "from-blue-600 to-blue-800",
-      image: "/services/download (2).JPG",
+      image: "/services/download (2).jpg",
     },
     {
       id: 2,
@@ -57,7 +57,7 @@ const Service = () => {
       stats: { value: "500+", label: t("Clearances") },
       link: `${locale}/services/egyptian-customs`,
       gradient: "from-orange-500 to-red-600",
-      image: "/services/download (1).JPG",
+      image: "/services/download (1).jpg",
     },
     {
       id: 3,
@@ -75,7 +75,7 @@ const Service = () => {
       stats: { value: "1M+", label: t("Shipments") },
       link: `${locale}/services/logistics`,
       gradient: "from-teal-600 to-blue-700",
-      image: "/services/download (3).JPG",
+      image: "/services/download (3).jpg",
     },
     {
       id: 4,
@@ -93,7 +93,7 @@ const Service = () => {
       stats: { value: "99.8%", label: t("Success Rate") },
       link: `${locale}/services/customs-clearance`,
       gradient: "from-purple-600 to-indigo-700",
-      image: "/services/Customs.JPG",
+      image: "/services/Customs.jpg",
     }, // In your Service component, add this to the services array:
     {
       id: 5,

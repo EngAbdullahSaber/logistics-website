@@ -126,6 +126,7 @@ const Footer = () => {
                     alt="Logista Logo"
                     width={70}
                     height={40}
+                    style={{ width: "auto", height: "auto" }} // Just add this line
                   />
                 </div>
                 <p
