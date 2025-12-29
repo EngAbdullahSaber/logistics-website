@@ -1,30 +1,51 @@
-// app/services/page.js
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ServicesDetails from "@/components/ServicesDetails";
 import ServiceSlider from "@/components/ServiceSlider";
 import React from "react";
+export const dynamic = "force-static";
+
+// Generate static params for all services and locales
+export function generateStaticParams() {
+  const services = [
+    "customs-consultancy",
+    "egyptian-customs",
+    "logistics",
+    "customs-clearance",
+    "shipping",
+  ];
+  const locales = ["en", "ar"];
+
+  const params = [];
+  for (const locale of locales) {
+    for (const service of services) {
+      params.push({ locale, id: service });
+    }
+  }
+  return params;
+}
 
 // SEO Metadata for Services Page
 export const metadata = {
-  title: "Professional Logistics & Customs Services | Glob Logistics",
+  metadataBase: new URL("https://global-logiestics.com"),
+  title: "Professional Logistics & Customs Services | Global Logistics",
   description:
     "Expert customs consulting, Egyptian customs services, logistics solutions, and supply chain management. 25+ years experience, 1M+ shipments handled worldwide.",
   keywords:
     "customs consulting services, Egyptian customs experts, logistics solutions, supply chain management, customs clearance, freight forwarding, international trade, Cairo logistics company",
-  authors: [{ name: "Glob Logistics" }],
+  authors: [{ name: "Global Logistics" }],
   openGraph: {
-    title: "Professional Logistics & Customs Services | Glob Logistics",
+    title: "Professional Logistics & Customs Services | Global Logistics",
     description:
       "Expert customs consulting, Egyptian customs services, logistics solutions, and supply chain management for international trade",
-    url: "https://globlogistics.com/services",
-    siteName: "Glob Logistics",
+    url: "https://global-logiestics.com/en/services",
+    siteName: "Global Logistics",
     images: [
       {
         url: "/services-og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Glob Logistics - Professional Customs & Logistics Services",
+        alt: "Global Logistics - Professional Customs & Logistics Services",
       },
     ],
     locale: "en_US",
@@ -32,11 +53,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Professional Logistics & Customs Services | Glob Logistics",
+    title: "Professional Logistics & Customs Services | Global Logistics",
     description:
       "Expert customs consulting and logistics solutions for international trade",
     images: ["/services-twitter-image.jpg"],
-    creator: "@globlogistics",
+    creator: "@globallogistics",
   },
   robots: {
     index: true,
@@ -49,14 +70,11 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
   alternates: {
-    canonical: "https://globlogistics.com/services",
+    canonical: "https://global-logiestics.com/en/services",
     languages: {
-      "en-US": "https://globlogistics.com/en/services",
-      "ar-EG": "https://globlogistics.com/ar/services",
+      "en-US": "https://global-logiestics.com/en/services",
+      "ar-EG": "https://global-logiestics.com/ar/services",
     },
   },
 };
@@ -68,11 +86,11 @@ const servicesStructuredData = {
   serviceType: "Logistics and Customs Consulting",
   provider: {
     "@type": "Organization",
-    name: "Glob Logistics",
+    name: "Global Logistics",
     description:
       "Professional customs consulting and global logistics solutions with 25+ years experience",
-    url: "https://globlogistics.com",
-    logo: "https://globlogistics.com/logo.JPEG",
+    url: "https://global-logiestics.com",
+    logo: "https://global-logiestics.com/logo.JPEG",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Cairo, Egypt",
@@ -83,7 +101,7 @@ const servicesStructuredData = {
       "@type": "ContactPoint",
       telephone: "+02-034951015",
       contactType: "customer service",
-      email: "info@customs-logistics.com",
+      email: "info@global-logiestics.com",
       areaServed: "Global",
       availableLanguage: ["en", "ar"],
     },
@@ -103,7 +121,7 @@ const servicesStructuredData = {
           serviceType: "Customs Consulting",
           provider: {
             "@type": "Organization",
-            name: "Glob Logistics",
+            name: "Global Logistics",
           },
         },
       },
@@ -117,7 +135,7 @@ const servicesStructuredData = {
           serviceType: "Customs Services",
           provider: {
             "@type": "Organization",
-            name: "Glob Logistics",
+            name: "Global Logistics",
           },
         },
       },
@@ -131,7 +149,7 @@ const servicesStructuredData = {
           serviceType: "Logistics Services",
           provider: {
             "@type": "Organization",
-            name: "Glob Logistics",
+            name: "Global Logistics",
           },
         },
       },
@@ -145,7 +163,21 @@ const servicesStructuredData = {
           serviceType: "Customs Clearance",
           provider: {
             "@type": "Organization",
-            name: "Glob Logistics",
+            name: "Global Logistics",
+          },
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Shipping Services",
+          description:
+            "Comprehensive shipping solutions including air freight, ocean freight, and land transportation",
+          serviceType: "Shipping Services",
+          provider: {
+            "@type": "Organization",
+            name: "Global Logistics",
           },
         },
       },
@@ -153,7 +185,27 @@ const servicesStructuredData = {
   },
 };
 
-const ServicePage = () => {
+// Breadcrumb structured data
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://global-logiestics.com/en/home",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://global-logiestics.com/en/services",
+    },
+  ],
+};
+
+const ServiceDetailPage = () => {
   return (
     <div>
       {/* Structured Data for SEO */}
@@ -161,6 +213,12 @@ const ServicePage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(servicesStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData),
         }}
       />
 
@@ -172,4 +230,4 @@ const ServicePage = () => {
   );
 };
 
-export default ServicePage;
+export default ServiceDetailPage;

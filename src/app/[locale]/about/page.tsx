@@ -1,30 +1,37 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Slider from "@/components/Slider";
-import StepArea from "@/components/StepArea ";
+import StepArea from "@/components/StepArea";
 import WhyChoose from "@/components/WhyChoose";
 import React from "react";
+export const dynamic = "force-static";
 
-// SEO Metadata
+// Generate static params for all locales
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
 export const metadata = {
-  title: "Glob Logistics - Customs Consulting & Global Supply Chain Solutions",
+  metadataBase: new URL("https://global-logiestics.com"),
+  title:
+    "Global Logistics - Customs Consulting & Global Supply Chain Solutions",
   description:
     "Professional customs consultancy, Egyptian customs services, and end-to-end logistics solutions. 25+ years experience, 1M+ shipments handled, serving 150+ countries worldwide.",
   keywords:
     "customs consulting, Egyptian customs, logistics services, supply chain management, customs clearance, global trade, freight forwarding, customs consultancy Egypt, logistics company Cairo",
-  authors: [{ name: "Glob Logistics" }],
+  authors: [{ name: "Global Logistics" }],
   openGraph: {
-    title: "Glob Logistics - Customs & Global Supply Chain Experts",
+    title: "Global Logistics - Customs & Global Supply Chain Experts",
     description:
       "Expert customs guidance, Egyptian-specialized services and end-to-end logistics solutions for international trade",
-    url: "https://globlogistics.com",
-    siteName: "Glob Logistics",
+    url: "https://global-logiestics.com/en/home",
+    siteName: "Global Logistics",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Glob Logistics - Customs & Logistics Solutions",
+        alt: "Global Logistics - Customs & Logistics Solutions",
       },
     ],
     locale: "en_US",
@@ -32,11 +39,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Glob Logistics - Customs & Global Supply Chain Experts",
+    title: "Global Logistics - Customs & Global Supply Chain Experts",
     description:
       "Professional customs consultancy and logistics solutions for international trade",
     images: ["/twitter-image.jpg"],
-    creator: "@globlogistics",
+    creator: "@globallogistics",
   },
   robots: {
     index: true,
@@ -49,24 +56,23 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-
   alternates: {
-    canonical: "https://globlogistics.com",
+    canonical: "https://global-logiestics.com/en/home",
     languages: {
-      "en-US": "https://globlogistics.com/en",
-      "ar-EG": "https://globlogistics.com/ar",
+      "en-US": "https://global-logiestics.com/en",
+      "ar-EG": "https://global-logiestics.com/ar",
     },
   },
 };
 
 // Structured Data for SEO
-const structuredData = {
+export const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Glob Logistics",
+  name: "Global Logistics",
   alternateName: "Global Customs & Logistics",
-  url: "https://globlogistics.com",
-  logo: "https://globlogistics.com/logo.JPEG",
+  url: "https://global-logiestics.com",
+  logo: "https://global-logiestics.com/logo.JPEG",
   description:
     "Professional customs consulting and global logistics solutions with 25+ years experience",
   address: {
@@ -79,14 +85,14 @@ const structuredData = {
     "@type": "ContactPoint",
     telephone: "+02-034951015",
     contactType: "customer service",
-    email: "info@customs-logistics.com",
+    email: "info@global-logiestics.com",
     areaServed: "Global",
     availableLanguage: ["en", "ar"],
   },
   sameAs: [
-    "https://www.facebook.com/globlogistics",
-    "https://www.linkedin.com/company/globlogistics",
-    "https://twitter.com/globlogistics",
+    "https://www.facebook.com/global-logiestics",
+    "https://www.linkedin.com/company/global-logiestics",
+    "https://twitter.com/global-logiestics",
   ],
   serviceType: [
     "Customs Consultancy",
@@ -98,13 +104,13 @@ const structuredData = {
 };
 
 // Service structured data
-const serviceStructuredData = {
+export const serviceStructuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "Logistics and Customs Consulting",
   provider: {
     "@type": "Organization",
-    name: "Glob Logistics",
+    name: "Global Logistics",
   },
   areaServed: "Global",
   hasOfferCatalog: {
@@ -142,7 +148,21 @@ const serviceStructuredData = {
   },
 };
 
-const page = () => {
+// Breadcrumb structured data for /en/home
+export const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://global-logiestics.com/en/home",
+    },
+  ],
+};
+
+const AboutPage = () => {
   return (
     <div>
       {/* Structured Data for SEO */}
@@ -166,4 +186,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AboutPage;

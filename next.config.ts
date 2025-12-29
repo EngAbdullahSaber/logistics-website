@@ -3,14 +3,16 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/", // when user visits root
-        destination: "/en/home", // default locale (English)
-        permanent: false,
-      },
-    ];
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 

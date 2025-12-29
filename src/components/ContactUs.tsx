@@ -36,6 +36,9 @@ const ContactUs = () => {
     hasError: false,
   });
 
+  const WHATSAPP_NUMBER = "01126054336";
+  const COMPANY_NAME = "Global Logistics";
+
   const handleInputChange = (
     e: React.FormEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -48,52 +51,103 @@ const ContactUs = () => {
   };
 
   // Fixed WhatsApp function
-  const openWhatsApp = (phoneNumber: string) => {
-    // Clean the phone number - remove spaces, dashes, and other non-digit characters
+  const openWhatsApp = (phoneNumber: string, message?: string) => {
     const cleanPhone = phoneNumber.replace(/\D/g, "");
-
-    // Ensure the number has country code format
     let formattedNumber = cleanPhone;
 
-    // If number starts with 02 (Egypt landline format), convert to international format
-    if (formattedNumber.startsWith("02")) {
-      formattedNumber = "20" + formattedNumber.substring(2);
+    // Handle Egyptian numbers
+    if (formattedNumber.startsWith("0")) {
+      formattedNumber = "20" + formattedNumber.substring(1);
     }
 
-    // If number doesn't start with country code, assume it's Egypt (+20)
     if (!formattedNumber.startsWith("20") && !formattedNumber.startsWith("+")) {
       formattedNumber = "20" + formattedNumber;
     }
 
-    // Remove any leading zeros after country code
     formattedNumber = formattedNumber.replace(/^200+/, "20");
 
-    // Create WhatsApp URL
-    const whatsappUrl = `https://wa.me/${formattedNumber}`;
+    // URL encode the message
+    const encodedMessage = message ? encodeURIComponent(message) : "";
+    const whatsappUrl = `https://wa.me/${formattedNumber}${
+      message ? `?text=${encodedMessage}` : ""
+    }`;
+
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+  const generateWhatsAppMessage = () => {
+    const timestamp = new Date().toLocaleString("en-US", {
+      timeZone: "Africa/Cairo",
+      dateStyle: "full",
+      timeStyle: "short",
+    });
+
+    return `
+*New Contact Form Submission - ${COMPANY_NAME}*
+
+👤 *Contact Information*
+• Name: ${formData.firstName} ${formData.lastName}
+• Email: ${formData.email}
+• Phone: ${formData.phone || "Not provided"}
+• Company: ${formData.company || "Not provided"}
+
+💬 *Message*
+${formData.message}
+
+📅 *Submitted on:* ${timestamp}
+📍 *Source:* Website Contact Form
+    `.trim();
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Basic validation
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.message
+    ) {
+      alert(t("Please fill in all required fields"));
+      return;
+    }
+
     setFormStatus({ isSubmitting: true, isSubmitted: false, hasError: false });
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+    try {
+      // Generate WhatsApp message
+      const whatsappMessage = generateWhatsAppMessage();
+
+      // Open WhatsApp with the message
+      openWhatsApp(WHATSAPP_NUMBER, whatsappMessage);
+
+      // Simulate sending delay for better UX
+      setTimeout(() => {
+        setFormStatus({
+          isSubmitting: false,
+          isSubmitted: true,
+          hasError: false,
+        });
+
+        // Reset form after successful submission
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+      }, 1500);
+    } catch (error) {
+      console.error("Error preparing WhatsApp message:", error);
       setFormStatus({
         isSubmitting: false,
-        isSubmitted: true,
-        hasError: false,
+        isSubmitted: false,
+        hasError: true,
       });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-      });
-    }, 2000);
+    }
   };
 
   const offices = [
@@ -102,8 +156,8 @@ const ContactUs = () => {
       country: "Egypt",
       address:
         "El Shorta buildings No. 3, 10th floor, Kom eldikkah, Alexandria, Egypt",
-      phone: "+201004176030", // Fixed format for WhatsApp
-      displayPhone: "+20 100 417 6030", // Display format
+      phone: "+201004176030",
+      displayPhone: "+20 100 417 6030",
       email: "info@logista.com",
       hours: "Sun-Thu: 9AM-5PM EET",
     },
@@ -133,19 +187,19 @@ const ContactUs = () => {
       <section className="relative pt-24 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-blue-100 px-6 py-3 rounded-full text-blue-600 text-sm font-semibold mb-8">
-              <FaHeadset className="w-4 h-4" />
-              {t("Professional Support")}
+            <div className="inline-flex items-center gap-2 bg-green-100 px-6 py-3 rounded-full text-green-600 text-sm font-semibold mb-8">
+              <FaWhatsapp className="w-4 h-4" />
+              {t("Direct WhatsApp Support")}
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
               {t("Get In ")}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-700 bg-clip-text text-transparent">
                 {t("Touch")}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
               {t(
-                "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs"
+                "Ready to transform your logistics? Send us a message directly on WhatsApp for fast response and personalized service"
               )}
               .
             </p>
@@ -161,12 +215,15 @@ const ContactUs = () => {
             <div className="relative">
               <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 border border-gray-100">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    {t("Send Us A Message")}
-                  </h2>
+                  <div className="flex items-center gap-3 mb-4">
+                    <FaWhatsapp className="w-8 h-8 text-green-600" />
+                    <h2 className="text-3xl font-bold text-gray-900">
+                      {t("Send Message via WhatsApp")}
+                    </h2>
+                  </div>
                   <p className="text-gray-600 text-lg">
                     {t(
-                      "Fill out the form below and our Alexandria team will get back to you within 24 hours"
+                      "Fill out the form below and send directly to our support team on WhatsApp"
                     )}
                   </p>
                 </div>
@@ -177,11 +234,21 @@ const ContactUs = () => {
                       <FaCheckCircle className="w-10 h-10 text-green-500" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      {t("Message Sent Successfully!")}
+                      {t("Ready to Send!")}
                     </h3>
                     <p className="text-gray-600 mb-8">
-                      {t("Thank you for contacting us")}
+                      {t("Your message is ready to be sent on WhatsApp")}
                     </p>
+                    <button
+                      onClick={() => {
+                        const message = generateWhatsAppMessage();
+                        openWhatsApp(WHATSAPP_NUMBER, message);
+                      }}
+                      className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2 mx-auto"
+                    >
+                      <FaWhatsapp className="w-4 h-4" />
+                      {t("Open WhatsApp Now")}
+                    </button>
                     <button
                       onClick={() =>
                         setFormStatus({
@@ -190,150 +257,165 @@ const ContactUs = () => {
                           hasError: false,
                         })
                       }
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                      className="mt-4 text-gray-600 hover:text-gray-900 font-medium"
                     >
-                      {t("Send Another Message")}
+                      {t("Create New Message")}
                     </button>
                   </div>
                 ) : (
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit}>
+                    <div className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="relative">
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            {t("First Name")} *
+                          </label>
+                          <div className="relative">
+                            <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                            <input
+                              type="text"
+                              name="firstName"
+                              value={formData.firstName}
+                              onChange={handleInputChange}
+                              required
+                              className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                              placeholder="John"
+                            />
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            {t("Last Name")} *
+                          </label>
+                          <div className="relative">
+                            <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                            <input
+                              type="text"
+                              name="lastName"
+                              value={formData.lastName}
+                              onChange={handleInputChange}
+                              required
+                              className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                              placeholder="Doe"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="relative">
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            {t("Email Address")} *
+                          </label>
+                          <div className="relative">
+                            <FaEnvelopeOpen className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                            <input
+                              type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              required
+                              className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                              placeholder="john.doe@company.com"
+                            />
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            {t("Phone Number")} *
+                          </label>
+                          <div className="relative">
+                            <FaPhoneAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                            <input
+                              type="tel"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleInputChange}
+                              className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                              placeholder="+20 100 000 0000"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
                       <div className="relative">
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {t("First Name")} *
+                          {t("Company Name")}
                         </label>
                         <div className="relative">
-                          <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                          <FaBuilding className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                           <input
                             type="text"
-                            name="firstName"
-                            value={formData.firstName}
+                            name="company"
+                            value={formData.company}
                             onChange={handleInputChange}
-                            required
-                            className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
-                            placeholder="John"
+                            className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                            placeholder="Your Company Ltd."
                           />
                         </div>
                       </div>
+
                       <div className="relative">
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {t("Last Name")} *
+                          {t("Message")} *
                         </label>
                         <div className="relative">
-                          <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                          <input
-                            type="text"
-                            name="lastName"
-                            value={formData.lastName}
+                          <FaComments className="absolute left-4 top-6 text-gray-400 w-4 h-4" />
+                          <textarea
+                            name="message"
+                            value={formData.message}
                             onChange={handleInputChange}
                             required
-                            className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
-                            placeholder="Doe"
+                            rows={6}
+                            className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white resize-none"
+                            placeholder="Tell us about your customs clearance needs, shipping requirements, or any questions you have about Egyptian import/export procedures..."
                           />
                         </div>
                       </div>
-                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="relative">
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {t("Email Address")} *
-                        </label>
-                        <div className="relative">
-                          <FaEnvelopeOpen className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                          <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
-                            placeholder="john.doe@company.com"
-                          />
+                      {formStatus.hasError && (
+                        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl">
+                          <p className="font-medium">
+                            {t("Error preparing message. Please try again.")}
+                          </p>
                         </div>
-                      </div>
-                      <div className="relative">
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          {t("Phone Number")} *
-                        </label>
-                        <div className="relative">
-                          <FaPhoneAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                          <input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
-                            placeholder="+20 100 000 0000"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t("Company Name")} *
-                      </label>
-                      <div className="relative">
-                        <FaBuilding className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                        <input
-                          type="text"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
-                          placeholder="Your Company Ltd."
-                        />
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t("Message")} *
-                      </label>
-                      <div className="relative">
-                        <FaComments className="absolute left-4 top-6 text-gray-400 w-4 h-4" />
-                        <textarea
-                          name="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          required
-                          rows={6}
-                          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white resize-none"
-                          placeholder="Tell us about your customs clearance needs, shipping requirements, or any questions you have about Egyptian import/export procedures..."
-                        />
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={handleSubmit}
-                      disabled={formStatus.isSubmitting}
-                      className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 ${
-                        formStatus.isSubmitting
-                          ? "opacity-50 cursor-not-allowed"
-                          : ""
-                      }`}
-                    >
-                      {formStatus.isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                          {t("Sending Message")}...
-                        </>
-                      ) : (
-                        <>
-                          {t("Send Message")}
-                          <FaPaperPlane className="w-4 h-4" />
-                        </>
                       )}
-                    </button>
 
-                    <p className="text-sm text-gray-500 text-center">
-                      {t(
-                        "By submitting this form, you agree to our Privacy Policy and Terms of Service"
-                      )}
-                      .
-                    </p>
-                  </div>
+                      <button
+                        type="submit"
+                        disabled={formStatus.isSubmitting}
+                        className={`w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 ${
+                          formStatus.isSubmitting
+                            ? "opacity-50 cursor-not-allowed"
+                            : ""
+                        }`}
+                      >
+                        {formStatus.isSubmitting ? (
+                          <>
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                            {t("Preparing Message")}...
+                          </>
+                        ) : (
+                          <>
+                            <FaWhatsapp className="w-5 h-5" />
+                            {t("Send via WhatsApp")}
+                          </>
+                        )}
+                      </button>
+
+                      <div className="text-center text-sm text-gray-500 p-4 bg-gray-50 rounded-xl">
+                        <p className="font-medium mb-1">
+                          <FaWhatsapp className="inline w-3 h-3 mr-1" />
+                          {t("WhatsApp Number")}: {WHATSAPP_NUMBER}
+                        </p>
+                        <p>
+                          {t(
+                            "Your message will be sent to our support team on WhatsApp"
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                  </form>
                 )}
               </div>
             </div>
@@ -388,13 +470,14 @@ const ContactUs = () => {
                         </div>
                         <div>
                           <p className="font-semibold text-gray-900 mb-1">
-                            {t("Phone")}
+                            {t("WhatsApp Support")}
                           </p>
                           <button
-                            onClick={() => openWhatsApp(offices[0].phone)}
+                            onClick={() => openWhatsApp(WHATSAPP_NUMBER)}
                             className="text-gray-700 cursor-pointer hover:text-green-600 transition-colors text-sm block text-left w-full hover:underline flex items-center gap-1"
                           >
-                            {offices[0].displayPhone}
+                            +20 {WHATSAPP_NUMBER}
+                            <FaWhatsapp className="w-3 h-3" />
                           </button>
                         </div>
                       </div>
@@ -408,10 +491,10 @@ const ContactUs = () => {
                             {t("Email")}
                           </p>
                           <a
-                            href="mailto:info@logista.com"
+                            href="mailto:support@global-logiestics.com"
                             className="text-gray-600 hover:text-blue-600 transition-colors"
                           >
-                            info@logista.com
+                            support@global-logiestics.com
                           </a>
                         </div>
                       </div>
@@ -449,11 +532,16 @@ const ContactUs = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <button
-                        onClick={() => openWhatsApp(offices[0].phone)}
-                        className="bg-green-600 cursor-pointer hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                        onClick={() =>
+                          openWhatsApp(
+                            WHATSAPP_NUMBER,
+                            "URGENT: Need emergency customs clearance assistance!"
+                          )
+                        }
+                        className="bg-red-600 cursor-pointer hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                       >
                         <FaWhatsapp className="w-4 h-4" />
-                        {t("WhatsApp")}
+                        {t("Emergency WhatsApp")}
                       </button>
                       <span className="text-sm text-gray-600 flex items-center justify-center">
                         {t("Available 24/7")}
@@ -473,7 +561,7 @@ const ContactUs = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {t("Frequently Asked")}{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
                 {t("Questions")}
               </span>
             </h2>
@@ -506,10 +594,10 @@ const ContactUs = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-gray-50 to-green-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <FaQuestionCircle className="w-5 h-5 text-white" />
                   </div>
                   <div>

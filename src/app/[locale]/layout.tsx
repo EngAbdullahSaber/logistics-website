@@ -5,7 +5,6 @@ import { Geist, Geist_Mono, Almarai } from "next/font/google";
 
 import "./globals.css";
 import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
 
 // Google Fonts
 const geistSans = Geist({
@@ -26,42 +25,70 @@ const almarai = Almarai({
 });
 
 export const metadata: Metadata = {
-  title: "Mahfouz - Safe & Reliable School Transportation",
+  title:
+    "Global Logistics - Customs Consulting & Global Supply Chain Solutions",
   description:
-    "Mahfouz connects families with trusted school transport. Join organized groups, follow every ride on a live map, and get instant notifications at pickup, drop-off, and delays—peace of mind from home to school and back",
+    "Professional customs consultancy, Egyptian customs services, and end-to-end logistics solutions. 25+ years experience in global trade.",
   icons: {
     icon: "/favicon.ico",
   },
   keywords: [
-    "school transportation",
-    "student transport",
-    "bus tracking",
-    "school bus app",
-    "child safety",
-    "parent communication",
-    "real-time tracking",
+    "customs consulting",
+    "Egyptian customs",
+    "logistics services",
+    "supply chain management",
+    "customs clearance",
+    "global trade",
   ],
 };
+
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
+// Static message loading for static export
+async function getStaticMessages(locale: string) {
+  try {
+    if (locale === "en") {
+      return (await import("@/messages/en.json")).default;
+    } else if (locale === "ar") {
+      return (await import("@/messages/ar.json")).default;
+    }
+    return {};
+  } catch (error) {
+    console.error("Error loading messages:", error);
+    return {};
+  }
+}
 
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  // Ensure that the incoming `locale` is valid
-  const { locale } = await params;
+  const { locale } = params;
+
+  // Validate locale
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-  const messages = await getMessages({ locale });
+
+  // Use static message loading instead of dynamic getMessages()
+  const messages = await getStaticMessages(locale);
 
   // Set direction: RTL for Arabic, LTR for everything else
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
     <html lang={locale} dir={dir} data-scroll-behavior="smooth">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="Gq4CemEKc7C2_yOiQj3C8tincxsmMUZ38ZaK7er5Rqg"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${almarai.variable} antialiased`}
       >

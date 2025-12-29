@@ -3,7 +3,7 @@
     "hours": "السبت - الخميس: من 9:00 صباحًا إلى 6:00 مساءً",
     "trackShipment": "تتبع الشحنة",
     "customerPortal": "بوابة العميل",
-    "Glob logistics": "Glob logistics",
+    "Global logistics": "اللوجستيات العالمية",
     "globalLogistics": "حلول لوجستية عالمية",
     "home": "الرئيسية",
     "Shipping Services": "خدمات الشحن",
@@ -269,11 +269,11 @@
     "Happy Clients": "عميل سعيد"
   },
   "WhyChoose": {
-    "About Glob Logistics": "عن جلوب لوجيستكس",
+    "About Global Logistics": "عن اللوجستيات العالمية",
     "Transforming Global Trade": "تحويل التجارة العالمية",
     "Your trusted partner for digital logistics and customs clearance solutions": "شريكك الموثوق لحلول الخدمات اللوجستية الرقمية والتخليص الجمركي",
     "Years Experience": "سنوات الخبرة",
-    "Why Choose Glob Logistics": "لماذا تختار جلوب لوجستيك؟",
+    "Why Choose Global Logistics": "لماذا تختار اللوجستيات العالمية؟",
     "Value Proposition": "عرض القيمة",
     "Shipments Handled": "شحنة تم التعامل معها",
     "Client Satisfaction": "رضا العملاء",
@@ -284,7 +284,7 @@
     "Global network with local expertise": "شبكة عالمية مع خبرة محلية",
     "Executive Summary": "ملخص تنفيذي",
     "Company Overview": "نظرة عامة على الشركة",
-    "Glob Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters": "جلوب لوجيستكس هي منصة رقمية للخدمات اللوجستية والتخليص الجمركي تقدم خدمات شاملة للشحن وإدارة الشحن والوساطة الجمركية للمستوردين والمصدرين",
+    "Global Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters": "اللوجستيات العالمية هي منصة رقمية للخدمات اللوجستية والتخليص الجمركي تقدم خدمات شاملة للشحن وإدارة الشحن والوساطة الجمركية للمستوردين والمصدرين",
     "Comprehensive freight forwarding services": "خدمات شحن شاملة",
     "Real-time shipment tracking": "تتبع الشحنات في الوقت الفعلي",
     "Simplified documentation & customs clearance": "توثيق مبسط والتخليص الجمركي",
@@ -303,7 +303,7 @@
     "Consultancy for trade compliance": "استشارات الامتثال التجاري",
 
     "Digital-First Logistics": "الخدمات اللوجستية الرقمية أولاً",
-    "Glob Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform": "تعمل جلوب لوجيستكس كمزود خدمات لوجستية رقمية أولاً تقدم للمستخدمين طريقة سهلة لحجز وإدارة الشحنات وطلب خدمات التخليص الجمركي وتتبع البضائع في الوقت الفعلي عبر منصتنا البديهية",
+    "Global Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform": "تعمل اللوجستيات العالمية كمزود خدمات لوجستية رقمية أولاً تقدم للمستخدمين طريقة سهلة لحجز وإدارة الشحنات وطلب خدمات التخليص الجمركي وتتبع البضائع في الوقت الفعلي عبر منصتنا البديهية",
     "Digital shipment booking & management": "حجز وإدارة الشحنات الرقمية",
     "Customs clearance service requests": "طلبات خدمات التخليص الجمركي",
     "Real-time cargo tracking": "تتبع البضائع في الوقت الفعلي",
@@ -346,8 +346,8 @@
 
     "Watch Our Story": "شاهد قصتنا",
     "Learn how we're transforming logistics": "تعرف على كيفية تحويلنا للخدمات اللوجستية",
-    "Glob Logistics - Our Story": "جلوب لوجيستكس - قصتنا",
-    "Learn how Glob Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services": "تعرف على كيفية ثورة جلوب لوجيستكس في صناعة الخدمات اللوجستية والتخليص الجمركي من خلال الابتكار الرقمي والخدمات المتخصصة"
+    "Global Logistics - Our Story": "اللوجستيات العالمية - قصتنا",
+    "Learn how Global Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services": "تعرف على كيفية ثورة اللوجستيات العالمية في صناعة الخدمات اللوجستية والتخليص الجمركي من خلال الابتكار الرقمي والخدمات المتخصصة"
   },
   "StepArea": {
     "Simple Steps to": "خطوات بسيطة لـ",
@@ -438,12 +438,25 @@
     "Logista": "جلوب لوجيستكس",
     "All": "جميع ",
     "rights reserved": "الحقوق محفوظة.",
-    "Designed with ❤️ for global logistics excellence": "صُمم بحب من أجل التميز في الخدمات اللوجستية العالمية"
+    "Designed with": "صُمم بحب من أجل التميز في الخدمات اللوجستية العالمية"
   },
   "ContactUs": {
     "Professional Support": "دعم احترافي",
     "Get In Touch": "تواصل",
     "Get In ": "تواصل ",
+    "WhatsApp Number": "رقم واتساب",
+    "Send via WhatsApp": "إرسال عبر واتساب",
+    "Your message will be sent to our support team on WhatsApp": "سيتم إرسال رسالتك إلى فريق الدعم لدينا عبر واتساب",
+    "WhatsApp Support": "دعم واتساب",
+    "Create New Message": "إنشاء رسالة جديدة",
+    "Open WhatsApp Now": "افتح واتساب الآن",
+    "Your message is ready to be sent on WhatsApp": "رسالتك جاهزة للإرسال عبر واتساب",
+    "Ready to Send!": "جاهز للإرسال!",
+    "Fill out the form below and send directly to our support team on WhatsApp": "املأ النموذج أدناه وأرسل مباشرة إلى فريق الدعم عبر واتساب",
+    "Send Message via WhatsApp": "إرسال الرسالة عبر واتساب",
+    "Ready to transform your logistics? Send us a message directly on WhatsApp for fast response and personalized service": "هل أنت مستعد لتطوير خدماتك اللوجستية؟ أرسل لنا رسالة مباشرة عبر واتساب للحصول على رد سريع وخدمة مخصصة",
+    "Direct WhatsApp Support": "دعم واتساب المباشر",
+    "Emergency WhatsApp": "واتساب الطوارئ",
     "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs": "هل أنت مستعد لتحويل خدماتك اللوجستية؟ فريقنا المتخصص في الإسكندرية جاهز لتقديم حلول مخصصة للجمارك والشحن لتلبية احتياجات عملك.",
     "Fill out the form below and our Alexandria team will get back to you within 24 hours": "املأ النموذج أدناه وسيتواصل معك فريقنا في الإسكندرية خلال 24 ساعة.",
     "Thank you for contacting us": "شكرًا لتواصلك معنا، سيقوم فريق الإسكندرية بالرد خلال 24 ساعة.",
@@ -525,6 +538,7 @@
     "Risk Management & Audits": "إدارة المخاطر والتدقيق",
     "Other": "أخرى"
   },
+
   "ServicesDetails": {
     "Customs Consultancy": "الاستشارات الجمركية",
     "Egyptian Customs Services": "الخدمات الجمركية المصرية",

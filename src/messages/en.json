@@ -3,7 +3,7 @@
     "hours": "Sat - Thur: 8:00 AM - 6:00 PM",
     "trackShipment": "Track Shipment",
     "customerPortal": "Customer Portal",
-    "Glob logistics": "Glob logistics",
+    "Global logistics": "Global logistics",
     "globalLogistics": "Global Logistics Solutions",
     "home": "Home",
     "Shipping Services": "Shipping Services",
@@ -273,8 +273,8 @@
   },
 
   "WhyChoose": {
-    "About Glob Logistics": "About Glob Logistics",
-    "Why Choose Glob Logistics": "Why Choose Glob Logistics?",
+    "About Global Logistics": "About Global Logistics",
+    "Why Choose Global Logistics": "Why Choose Global Logistics?",
     "Value Proposition": "Value Proposition",
     "Transforming Global Trade": "Transforming Global Trade",
     "Your trusted partner for digital logistics and customs clearance solutions": "Your trusted partner for digital logistics and customs clearance solutions",
@@ -288,7 +288,7 @@
     "Global network with local expertise": "Global network with local expertise",
     "Executive Summary": "Executive Summary",
     "Company Overview": "Company Overview",
-    "Glob Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters": "Glob Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters",
+    "Global Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters": "Global Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters",
     "Comprehensive freight forwarding services": "Comprehensive freight forwarding services",
     "Real-time shipment tracking": "Real-time shipment tracking",
     "Simplified documentation & customs clearance": "Simplified documentation & customs clearance",
@@ -307,7 +307,7 @@
     "Consultancy for trade compliance": "Consultancy for trade compliance",
 
     "Digital-First Logistics": "Digital-First Logistics",
-    "Glob Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform": "Glob Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform",
+    "Global Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform": "Global Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform",
     "Digital shipment booking & management": "Digital shipment booking & management",
     "Customs clearance service requests": "Customs clearance service requests",
     "Real-time cargo tracking": "Real-time cargo tracking",
@@ -350,8 +350,8 @@
 
     "Watch Our Story": "Watch Our Story",
     "Learn how we're transforming logistics": "Learn how we're transforming logistics",
-    "Glob Logistics - Our Story": "Glob Logistics - Our Story",
-    "Learn how Glob Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services": "Learn how Glob Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services"
+    "Global Logistics - Our Story": "Global Logistics - Our Story",
+    "Learn how Global Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services": "Learn how Global Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services"
   },
   "StepArea": {
     "Simple Steps to": "Simple Steps to",
@@ -440,15 +440,19 @@
     "YouTube": "YouTube",
 
     "Support": "Support",
-    "Logista": "Globe Logistics",
+    "Logista": "Global Logistics",
     "All": "All ",
     "rights reserved": "rights reserved.",
-    "Designed with ❤️ for global logistics excellence": "Designed with ❤️ for global logistics excellence"
+    "Designed with": "Designed with ❤️ for Global logistics excellence"
   },
   "ContactUs": {
     "Professional Support": "Professional Support",
     "Get In Touch": "Get In",
     "Get In ": "Get In ",
+    "WhatsApp Number": "WhatsApp Number ",
+    "Send via WhatsApp": "Send via WhatsApp ",
+    "Your message will be sent to our support team on WhatsApp": "Your message will be sent to our support team on WhatsApp ",
+
     "WhatsApp": "WhatsApp",
     "Alexandria, Egypt": "Alexandria, Egypt",
     "Sun-Thu: 9AM-5PM": "Sun-Thu: 9AM-5PM",
@@ -456,7 +460,16 @@
     "AddressDetails": "El Shorta buildings No. 3, 10th floor",
     "First Name": "First Name",
     "Last Name": "Last Name",
-
+    "WhatsApp Support": "WhatsApp Support",
+    "Create New Message": "Create New Message",
+    "Open WhatsApp Now": "Open WhatsApp Now",
+    "Your message is ready to be sent on WhatsApp": "Your message is ready to be sent on WhatsApp ",
+    "Ready to Send!": "Ready to Send! ",
+    "Fill out the form below and send directly to our support team on WhatsApp": "Fill out the form below and send directly to our support team on WhatsApp ",
+    "Send Message via WhatsApp": "Send Message via WhatsApp ",
+    "Ready to transform your logistics? Send us a message directly on WhatsApp for fast response and personalized service": "Ready to transform your logistics? Send us a message directly on WhatsApp for fast response and personalized service ",
+    "Direct WhatsApp Support": "Direct WhatsApp Support ",
+    "Emergency WhatsApp": "Emergency WhatsApp ",
     "Faq4": "We serve all major Egyptian ports, including Alexandria, Damietta, Port Said, Sokhna, and Ain Sokhna. Our team has extensive experience dealing with customs authorities at these locations.",
     "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs": "Ready to transform your logistics? Our expert team in Alexandria is here to provide tailored customs and shipping solutions for your business needs",
     "Fill out the form below and our Alexandria team will get back to you within 24 hours": "Fill out the form below and our Alexandria team will get back to you within 24 hours",

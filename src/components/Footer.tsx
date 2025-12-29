@@ -121,11 +121,10 @@ const Footer = () => {
             <div className="lg:col-span-4">
               <div className="mb-8">
                 <div className={`flex   mb-6`}>
-                  <Image
+                  <img
                     src={"/logo1.png"}
                     alt="Logista Logo"
-                    width={70}
-                    height={40}
+                    className="!w-[60px] !h-[70px]"
                     style={{ width: "auto", height: "auto" }} // Just add this line
                   />
                 </div>
@@ -222,7 +221,7 @@ const Footer = () => {
                 {footerData.links.services.map((link, index) => (
                   <div key={index}>
                     <Link
-                      href={link.href}
+                      href={`/${locale}${link.href}`}
                       className={`text-gray-400 hover:text-white transition-all duration-300 text-sm flex items-center gap-2 py-2 group ${getFlexDirection()} ${getJustifyAlignment()} ${getHoverTranslate()}`}
                     >
                       <FaArrowRight
@@ -251,7 +250,7 @@ const Footer = () => {
                 {footerData.links.company.map((link, index) => (
                   <div key={index}>
                     <Link
-                      href={link.href}
+                      href={`/${locale}${link.href}`}
                       className={`text-gray-400 hover:text-white transition-all duration-300 text-sm flex items-center gap-2 py-2 group ${getFlexDirection()} ${getJustifyAlignment()} ${getHoverTranslate()}`}
                     >
                       <FaArrowRight
@@ -283,7 +282,7 @@ const Footer = () => {
                     {footerData.links.support.map((link, index) => (
                       <div key={index}>
                         <Link
-                          href={link.href}
+                          href={`/${locale}${link.href}`}
                           className={`text-gray-400 hover:text-white transition-all duration-300 text-sm flex items-center gap-2 py-2 group ${getFlexDirection()} ${getJustifyAlignment()} ${getHoverTranslate()}`}
                         >
                           <FaArrowRight
@@ -339,7 +338,7 @@ const Footer = () => {
                   . {t("All rights reserved")}
                 </p>
                 <p className="text-gray-500 text-xs mt-1">
-                  {t("Designed with ❤️ for global logistics excellence")}.
+                  {t("Designed with")}.
                 </p>
               </div>
             </div>

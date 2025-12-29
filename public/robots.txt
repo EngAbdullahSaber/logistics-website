@@ -1,3 +1,28 @@
 User-agent: *
 Allow: /
-Sitemap: https://globlogistics.com/sitemap.xml
+
+# Sitemaps
+Sitemap: https://global-logiestics.com/sitemap.xml
+
+# Allow all important pages
+Allow: /en/home
+Allow: /ar/home
+Allow: /en/about
+Allow: /ar/about
+Allow: /en/services
+Allow: /ar/services
+Allow: /en/contact
+Allow: /ar/contact
+
+# Allow service detail pages
+Allow: /en/services/
+Allow: /ar/services/
+
+# Disallow admin and internal pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -19,7 +19,7 @@ const WhyChoose = () => {
       title: t("Executive Summary"),
       subtitle: t("Company Overview"),
       content: t(
-        "Glob Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters"
+        "Global Logistics is an online logistics and customs clearance platform that offers comprehensive freight forwarding, shipping management, and customs brokerage services for importers and exporters"
       ),
       image: "/bg/customs-consultant.png",
       features: [
@@ -52,7 +52,7 @@ const WhyChoose = () => {
       title: t("Company Overview"),
       subtitle: t("Digital-First Logistics"),
       content: t(
-        "Glob Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform"
+        "Global Logistics operates as a digital-first logistics provider offering users an easy way to book and manage shipments, request customs clearance services, and track cargo in real-time through our intuitive platform"
       ),
       image: "/bg/egyptian-customs.png",
       features: [
@@ -301,7 +301,9 @@ const WhyChoose = () => {
           >
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-6 py-3 rounded-full text-cyan-300 text-sm font-medium mb-6 backdrop-blur-sm border border-cyan-400/30 shadow-lg">
               <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse"></div>
-              <span className="tracking-wide">{t("About Glob Logistics")}</span>
+              <span className="tracking-wide">
+                {t("About Global Logistics")}
+              </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -402,7 +404,7 @@ const WhyChoose = () => {
               >
                 <img
                   src="/bg/why-choose-img.png"
-                  alt="Glob Logistics Services"
+                  alt="Global Logistics Services"
                   className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-all duration-300">
@@ -438,7 +440,7 @@ const WhyChoose = () => {
               {/* Additional Info Card */}
               <div className="mt-6 bg-white/10 rounded-2xl p-6 border border-white/20 backdrop-blur-sm">
                 <h4 className="text-white font-bold text-lg mb-3">
-                  {t("Why Choose Glob Logistics")}
+                  {t("Why Choose Global Logistics")}
                 </h4>
                 <div className="space-y-3">
                   {[
@@ -472,7 +474,7 @@ const WhyChoose = () => {
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse"></div>
                 <h3 className="text-xl font-bold text-white">
-                  {t("Glob Logistics - Our Story")}
+                  {t("Global Logistics - Our Story")}
                 </h3>
               </div>
               <button
@@ -503,7 +505,7 @@ const WhyChoose = () => {
                 className="w-full h-full"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                title="Glob Logistics Services Video"
+                title="Global Logistics Services Video"
                 scrolling="no"
                 frameBorder="0"
                 style={{ border: "none", overflow: "hidden" }}
@@ -514,7 +516,7 @@ const WhyChoose = () => {
             <div className="p-4 bg-slate-800/50 border-t border-slate-700/30">
               <p className="text-slate-400 text-center text-sm">
                 {t(
-                  "Learn how Glob Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services"
+                  "Learn how Global Logistics is revolutionizing the logistics and customs clearance industry through digital innovation and expert services"
                 )}
               </p>
             </div>

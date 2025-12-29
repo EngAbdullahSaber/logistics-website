@@ -1,68 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Pages -->
   <url>
-    <loc>https://globlogistics.com</loc>
+    <loc>https://global-logiestics.com/en/home</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://globlogistics.com/about</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/home"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/home"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://global-logiestics.com/en/home"/>
   </url>
   
+  <!-- About Pages -->
+  <url>
+    <loc>https://global-logiestics.com/en/about</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/about"/>
+  </url>
   
-  <!-- Individual Service Pages - English -->
+  <!-- Services Overview Pages -->
   <url>
-    <loc>https://globlogistics.com/en/services/customs-consultancy</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://globlogistics.com/en/services/egyptian-customs</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://globlogistics.com/en/services/logistics</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://globlogistics.com/en/services/customs-clearance</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Arabic Service Pages -->
-  <url>
-    <loc>https://globlogistics.com/ar/services</loc>
+    <loc>https://global-logiestics.com/en/services</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services"/>
   </url>
+
+  <!-- Individual Service Pages - English -->
   <url>
-    <loc>https://globlogistics.com/ar/services/customs-consultancy</loc>
+    <loc>https://global-logiestics.com/en/services/customs-consultancy</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://globlogistics.com/en/contact</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/customs-consultancy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/customs-consultancy"/>
   </url>
   <url>
-    <loc>https://globlogistics.com/ar/contact</loc>
+    <loc>https://global-logiestics.com/en/services/egyptian-customs</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/egyptian-customs"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/egyptian-customs"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/en/services/logistics</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/logistics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/logistics"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/en/services/customs-clearance</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/customs-clearance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/customs-clearance"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/en/services/shipping</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/shipping"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/shipping"/>
+  </url>
+
+  <!-- Individual Service Pages - Arabic -->
+  <url>
+    <loc>https://global-logiestics.com/ar/services/customs-consultancy</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/customs-consultancy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/customs-consultancy"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/ar/services/egyptian-customs</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/egyptian-customs"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/egyptian-customs"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/ar/services/logistics</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/logistics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/logistics"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/ar/services/customs-clearance</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/customs-clearance"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/customs-clearance"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/ar/services/shipping</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/services/shipping"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/services/shipping"/>
+  </url>
+
+  <!-- Contact Pages -->
+  <url>
+    <loc>https://global-logiestics.com/en/contact</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/contact"/>
+  </url>
+  <url>
+    <loc>https://global-logiestics.com/ar/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://global-logiestics.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://global-logiestics.com/ar/contact"/>
   </url>
 </urlset>

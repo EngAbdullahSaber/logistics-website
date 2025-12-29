@@ -191,7 +191,7 @@ const Header = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                info@logitrans.com
+                support@global-logiestics.com
               </span>
               {/* Language Switcher - Desktop */}
               <div
@@ -266,11 +266,11 @@ const Header = () => {
                 }`}
               >
                 {[
-                  { name: t("home"), href: "/" },
+                  { name: t("home"), href: "/home" },
                   { name: t("about"), href: "/about" },
                   {
                     name: t("services"),
-                    href: "", // Main services page
+                    href: "/services/customs-consultancy", // Main services page
                     submenu: serviceSubmenuItems,
                   },
                   { name: t("contact"), href: "/contact" },
@@ -349,7 +349,7 @@ const Header = () => {
                   </svg>
                 </button>
                 <Link
-                  href={`${locale}/contact`}
+                  href={`/${locale}/contact`}
                   className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-sm md:text-base"
                 >
                   {t("getQuote")}
@@ -476,7 +476,7 @@ const Header = () => {
                   </div>
                   <div>
                     <h2 className="text-lg font-bold text-gray-900">
-                      {t("Glob logistics")}
+                      {t("Global logistics")}
                     </h2>
                   </div>
                 </div>
@@ -539,7 +539,7 @@ const Header = () => {
               {/* Mobile Navigation */}
               <nav className="space-y-1">
                 {[
-                  { name: t("home"), href: "/" },
+                  { name: t("home"), href: "/home" },
                   { name: t("about"), href: "/about" },
                   {
                     name: t("services"),
@@ -632,7 +632,7 @@ const Header = () => {
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
-                    <span>info@logitrans.com</span>
+                    <span>support@global-logiestics.com</span>
                   </div>
                 </div>
               </div>
