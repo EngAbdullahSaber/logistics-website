@@ -36,7 +36,7 @@ const ContactUs = () => {
     hasError: false,
   });
 
-  const WHATSAPP_NUMBER = "01126054336";
+  const WHATSAPP_NUMBER = "01004176030";
   const COMPANY_NAME = "Global Logistics";
 
   const handleInputChange = (

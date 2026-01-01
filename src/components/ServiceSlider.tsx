@@ -34,7 +34,7 @@ const ServiceSlider = () => {
         slug: "customs-consultancy",
         title: st("Customs Consultancy"),
         images: [
-          "/slider/customs-consulting-1.JPG",
+          "/slider/egyptian-customs-2.png", /////
           "/slider/customs-consulting-2.webp",
           "/slider/customs-consulting-1.webp",
         ],
@@ -52,9 +52,9 @@ const ServiceSlider = () => {
         slug: "logistics",
         title: st("Logistics & Supply Chain"),
         images: [
-          "/slider/logistics-1.JPEG",
+          "/slider/customs-consulting-1.webp", /////
           "/slider/logistics-2.jpg",
-          "/slider/logistics-3.JFIF",
+          "/slider/shipping-1.jpg", /////
         ],
       },
       "customs-clearance": {
@@ -63,7 +63,7 @@ const ServiceSlider = () => {
         images: [
           "/slider/customs-clearance-1.jpg",
           "/slider/customs-clearance-2.jpg",
-          "/slider/customs-clearance-3.JPEG",
+          "/slider/shipping-1.jpg", /////
         ],
       },
       shipping: {
@@ -71,8 +71,8 @@ const ServiceSlider = () => {
         title: st("Shipping Services"),
         images: [
           "/slider/shipping-1.jpg",
-          "/slider/shipping-2.JPG",
-          "/slider/shipping-3.JPEG",
+          "/slider/egyptian-customs-2.png", ////
+          "/slider/customs-clearance-1.jpg", ////
         ],
       },
     };

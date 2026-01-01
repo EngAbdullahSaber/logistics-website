@@ -24,6 +24,7 @@ const ServicesDetails = () => {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const t = useTranslations("ServicesDetails");
+  const { locale } = useParams();
 
   // Build service data with real domain content
   const servicesData: Record<string, ServiceDetail> = {
@@ -464,7 +465,7 @@ const ServicesDetails = () => {
                 {t("Contact us today to learn more about this service")}
               </p>
 
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <button
                   onClick={handleCall}
                   className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
@@ -479,7 +480,7 @@ const ServicesDetails = () => {
                   <FaEnvelope className="w-4 h-4 mr-2" />
                   {t("Email Us")}
                 </button>
-              </div>
+              </div> */}
 
               <div className="mt-6 pt-6 border-t">
                 <p className="text-sm text-gray-500 mb-2">
@@ -506,7 +507,9 @@ const ServicesDetails = () => {
                     <button
                       key={relatedService.slug}
                       onClick={() =>
-                        router.push(`/services/${relatedService.slug}`)
+                        router.push(
+                          `/${locale}/services/${relatedService.slug}`
+                        )
                       }
                       className="w-full text-left px-4 py-2 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors"
                     >
@@ -529,7 +532,7 @@ const ServicesDetails = () => {
             {t("Contact our team today for a free consultation")}
           </p>
           <button
-            onClick={() => router.push("/contact")}
+            onClick={() => router.push(`/${locale}/contact`)}
             className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
           >
             {t("Contact Us Now")}

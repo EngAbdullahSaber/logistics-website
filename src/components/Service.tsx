@@ -37,7 +37,7 @@ const Service = () => {
         t("Risk Assessment"),
       ],
       stats: { value: "300+", label: t("Clients Served") },
-      link: `${locale}/services/customs-consultancy`,
+      link: `/${locale}/services/customs-consultancy`,
       gradient: "from-blue-600 to-blue-800",
       image: "/services/download (2).jpg",
     },
@@ -55,7 +55,7 @@ const Service = () => {
         t("Time Optimization"),
       ],
       stats: { value: "500+", label: t("Clearances") },
-      link: `${locale}/services/egyptian-customs`,
+      link: `/${locale}/services/egyptian-customs`,
       gradient: "from-orange-500 to-red-600",
       image: "/services/download (1).jpg",
     },
@@ -73,7 +73,7 @@ const Service = () => {
         t("Real-Time Tracking"),
       ],
       stats: { value: "1M+", label: t("Shipments") },
-      link: `${locale}/services/logistics`,
+      link: `/${locale}/services/logistics`,
       gradient: "from-teal-600 to-blue-700",
       image: "/services/download (3).jpg",
     },
@@ -91,7 +91,7 @@ const Service = () => {
         t("Digital E-Filing"),
       ],
       stats: { value: "99.8%", label: t("Success Rate") },
-      link: `${locale}/services/customs-clearance`,
+      link: `/${locale}/services/customs-clearance`,
       gradient: "from-purple-600 to-indigo-700",
       image: "/services/Customs.jpg",
     }, // In your Service component, add this to the services array:
@@ -111,7 +111,7 @@ const Service = () => {
         t("Rail Solutions"),
       ],
       stats: { value: "50K+", label: t("Shipments") },
-      link: `${locale}/services/shipping`,
+      link: `/${locale}/services/shipping`,
       gradient: "from-cyan-600 to-blue-700",
       image: "/services/shipping.jpg",
     },
@@ -179,7 +179,7 @@ const Service = () => {
   // Generate proper link with language
   const getLocalizedLink = (link: string) => {
     const lang = getCurrentLanguage();
-    return lang === "ar" ? `/ar${link}` : link;
+    return lang === "ar" ? `${link}` : link;
   };
 
   return (
